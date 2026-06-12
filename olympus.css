@@ -720,6 +720,14 @@ ul.torrent__tags .torrent-icons {
 .donation-package__wrapper {
   max-width: calc(25% - 16px) !important;
   padding: 20px 12px !important;
+  background-color: var(--at-bg3) !important;
+  border: 1px solid rgba(245,166,35,0.55) !important;
+  border-radius: var(--at-radius) !important;
+  transition: border-color .2s, box-shadow .2s !important;
+}
+.donation-package__wrapper:hover {
+  border-color: var(--at-gold) !important;
+  box-shadow: 0 0 14px rgba(245,166,35,0.25) !important;
 }
 
 html body .panel__header select,
