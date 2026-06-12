@@ -709,16 +709,22 @@ ul.torrent__tags .torrent-icons {
   font-weight: inherit !important;
 }
 
-.donation__item {
-  max-width: 380px !important;
+/* Donation page: cards are .donation-package__wrapper (flex children
+   capped at calc(25% - 30px)); tighter gaps + slimmer side padding
+   give the benefit text ~35px more room so lines stop wrapping.
+   (The old .donation__item max-width rule was removed — that class
+   doesn't exist on /donations and the cap was what made text narrow.) */
+.donation-packages {
+  gap: 16px !important;
 }
-.donation__item--body {
-  padding: 30px 16px 10px !important;
+.donation-package__wrapper {
+  max-width: calc(25% - 16px) !important;
+  padding: 20px 12px !important;
 }
 
 html body .panel__header select,
 html body .panel__header .form__select {
-  min-width: 100px !important;
+  min-width: 110px !important;
 }
 
 details.torrent-search--grouped__dropdown > details.torrent-search--grouped__dropdown + details.torrent-search--grouped__dropdown {
@@ -740,15 +746,6 @@ td.data-table__bon-taxed {
   vertical-align: middle !important;
 }
 td.data-table__bon-taxed i.fa-percent { margin-left: 4px !important; }
-
-/* ── HDR10+ badge ──
-   icon_hdr10plus.png is a colored logo with knockout (transparent)
-   text, so the __vision invert(1) makes it muddy/black on desktop
-   AND mobile. Flatten it to white like the DolbyVision badge. */
-.torrent-icons img[src*="hdr10plus"],
-.torrent-icons__vision img[title="HDR10+"] {
-  filter: brightness(0) invert(1) opacity(0.85) !important;
-}
 
 /* ── Generic text inputs (stray unstyled inputs site-wide) ──
    :not() exclusions keep the quick-search pill (base var
@@ -781,13 +778,21 @@ li.top-nav__dropdown ul li a.top-nav__username {
   padding: 8px 0 2px !important;
 }
 
-/* ── Dropdown / icon-bar circle icons: hard-center the glyph ── */
+/* ── Dropdown / icon-bar circle icons ──
+   Glyphs measure dead-center in CSS px (verified: all 32 nav
+   glyphs within ±0.5px of box center). The perceived offset comes
+   from OS display scaling: 30px circles = 37.5 device px at 125%,
+   so Chrome's rounding shifts the glyph a hair per element.
+   32px lands on whole device pixels at 125% AND 150%.
+   If you prefer the old size, change 32px back to 30px. */
 .top-nav--left__list-item ul li i.fas,
 .top-nav--left__list-item ul li i.far,
 .top-nav--left__list-item ul li i.fab,
 li.top-nav__dropdown ul li i.fas,
 li.top-nav__dropdown ul li i.far,
 li.top-nav__dropdown ul li i.fab {
+  width: 32px !important;
+  height: 32px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -866,6 +871,35 @@ main[class*="stat"] .key-value__group dt {
   color: var(--at-text2) !important;
 }
 main[class*="stat"] tr:hover td { background-color: #101524 !important; }
+
+/* ── Category icons: keep aither-dark's neutral gray ──
+   The :root --color-icons: #f5a623 gilds both i.torrent-icon and
+   i.category__icon (aither-dark default is #bababa). Torrent icons
+   stay gold; category/format icons go back to neutral. */
+i.category__icon { color: #bababa !important; }
+
+/* ── Chatbox header: de-emphasize SystemBot / Users / icon buttons
+   (Ether's attention-hierarchy feedback). The gold panel heading
+   stays the anchor; secondary controls sit muted and light up gold
+   on hover. ── */
+#chatbox_header .form__button--text,
+.panelV2.chatbox .panel__header .form__button--text {
+  color: var(--at-text2) !important;
+}
+#chatbox_header .form__button--text:hover,
+.panelV2.chatbox .panel__header .form__button--text:hover {
+  color: var(--at-gold) !important;
+}
+#chatbox_header .form__standard-icon-button,
+.panelV2.chatbox .panel__header .form__standard-icon-button {
+  color: var(--at-text2) !important;
+  opacity: 0.7 !important;
+}
+#chatbox_header .form__standard-icon-button:hover,
+.panelV2.chatbox .panel__header .form__standard-icon-button:hover {
+  color: var(--at-gold) !important;
+  opacity: 1 !important;
+}
 
 /* ── Misc small adds ── */
 .progress-bar, [class*="progress"] > [class*="bar"] { background-color: var(--at-gold) !important; }
