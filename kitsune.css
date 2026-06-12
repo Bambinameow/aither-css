@@ -50,6 +50,7 @@
   --label-fg:                     #888888;
   --label-fg-active:              #888888;
   --secondary-nav-tab-hover-text-decoration: underline var(--k-pink) 2px;
+  --color-links-hover: #F4AACA;
 }
 
 li.top-nav__dropdown ul li a.top-nav__username i[class*="fa-"] { color: inherit !important; background-color: transparent !important; border-color: transparent !important; }
@@ -755,4 +756,182 @@ h2.meta__heading {
 details.torrent-search--grouped__dropdown > details.torrent-search--grouped__dropdown + details.torrent-search--grouped__dropdown {
   border-top: 2px solid rgba(244,170,202,0.25) !important;
   margin-top: 4px !important;
+}
+
+/* ── fork: torrent icon pill alignment ─────────────────────
+   centers stars/badges vertically + stops wrapping */
+.torrent-icons {
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+  vertical-align: middle !important;
+}
+.torrent-icons__vision {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+/* cover EVERY badge image (DV, HDR, HDR10+), not just __vision —
+   fixes HDR10+ not inverting on mobile */
+.torrent-icons img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  height: 14px !important;
+  width: auto !important;
+  filter: invert(1) brightness(0.8) !important;
+}
+ 
+/* ── fork: sticky/featured row hover ── */
+tr.torrent-search--list__sticky-row:hover td { background-color: transparent !important; }
+tr.torrent-search--list__sticky-row:hover { background-color: rgba(244,170,202,0.10) !important; }
+ 
+/* ── fork: donation page layout ── */
+.donation__item { max-width: 380px !important; }
+.donation__item--body { padding: 30px 16px 10px !important; }
+ 
+/* ── fork: panel-header selects shouldn't collapse ── */
+html body .panel__header select,
+html body .panel__header .form__select { min-width: 100px !important; }
+ 
+/* ── fork: stronger group-requirements hovers ── */
+.group-requirements__group-wrapper:hover { background-color: rgba(244,170,202,0.08) !important; }
+.group-requirements__group--requirement-row:hover { background-color: rgba(244,170,202,0.12) !important; }
+ 
+/* ── fork: hover the whole li, not just the anchor ── */
+.top-nav--left__list-item > a:hover, .top-nav--left__list-item:hover > a,
+li.top-nav__dropdown > a:hover, li.top-nav__dropdown:hover > a {
+  color: var(--k-pink) !important;
+  background-color: transparent !important;
+}
+ 
+/* ==========================================================
+   NOTES FIXES
+   ========================================================== */
+ 
+/* ── note: dropdown circle icons sit too low / off-center
+   (torrents, upload, pending, forums, playlists…) ── */
+.top-nav--left__list-item ul li i.fas,
+.top-nav--left__list-item ul li i.far,
+.top-nav--left__list-item ul li i.fab,
+li.top-nav__dropdown ul li i.fas,
+li.top-nav__dropdown ul li i.far,
+li.top-nav__dropdown ul li i.fab {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+}
+.top-nav--right__icon-link i.fas,
+.top-nav--right__icon-link i.far,
+.top-nav--right__link i.fas {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+}
+ 
+/* ── note: floating label crosses the border again when a field
+   is FOCUSED but still empty (the :has(:not(:placeholder-shown))
+   rules only cover filled fields) ── */
+.form__group:focus-within .form__label--floating {
+  background-color: var(--k-bg2) !important;
+  padding: 0 4px !important;
+}
+fieldset .form__group:focus-within .form__label--floating,
+[class*="compact-search"] .form__group:focus-within .form__label--floating,
+[class*="torrent-search"] .form__group:focus-within .form__label--floating,
+.page__torrent--create fieldset .form__group:focus-within .form__label--floating {
+  background-color: var(--k-bg3) !important;
+}
+ 
+/* ── note: checkboxes use a white check instead of black ──
+   accent-color leaves the glyph colour up to the browser (iOS
+   picks white on sakura pink). Custom-drawn box with a black
+   check. SITE-WIDE — delete this block if you don't like it. */
+input[type="checkbox"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 15px !important;
+  height: 15px !important;
+  border: 1px solid var(--k-border-mid) !important;
+  border-radius: 4px !important;
+  background-color: var(--k-bg3) !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+input[type="checkbox"]:hover { border-color: var(--k-pink) !important; }
+input[type="checkbox"]:checked {
+  background-color: var(--k-pink) !important;
+  border-color: var(--k-pink) !important;
+}
+input[type="checkbox"]:checked::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 4.5px;
+  top: 1.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #000 !important;
+  border-width: 0 2px 2px 0 !important;
+  transform: rotate(45deg) !important;
+}
+input[type="checkbox"]:disabled {
+  opacity: 0.6 !important;
+  cursor: default !important;
+}
+ 
+/* ── note: gifts page layout broken ──
+   the global td[rowspan] kill-rule (meant for history tables)
+   nukes the legit rowspan points column on /users/X/gifts.
+   Restore rowspan cells on gift pages. If the main class on
+   that page isn't page__*gift*, retarget this. */
+main[class*="gift"] .data-table td[rowspan],
+main[class*="gift"] .data-table:has(td[rowspan]) th:first-child {
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+  overflow: visible !important;
+  border-bottom: 0.5px solid var(--k-border-faint) !important;
+}
+main[class*="gift"] .data-table td { vertical-align: middle !important; }
+ 
+/* ── note: stats page uses 3 different colours ──
+   normalize everything to bg2/bg3 striping */
+main[class*="stat"] .panel__body { background-color: var(--k-bg2) !important; }
+main[class*="stat"] table td,
+main[class*="stat"] .key-value__group dd { background-color: var(--k-bg2) !important; }
+main[class*="stat"] tr:nth-child(even) td { background-color: var(--k-bg3) !important; }
+main[class*="stat"] th,
+main[class*="stat"] thead td,
+main[class*="stat"] .key-value__group dt {
+  background-color: var(--k-bg3) !important;
+  color: var(--k-text2) !important;
+}
+main[class*="stat"] tr:hover td { background-color: var(--k-pink-faint) !important; }
+ 
+/* ── note: mobile ── */
+@media (max-width: 1100px) {
+  /* dropdown could use a border on mobile */
+  .top-nav--left__dropdown,
+  .top-nav--left__list-item ul,
+  li.top-nav__dropdown > ul {
+    border: 1px solid var(--k-pink-border) !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.85) !important;
+  }
+}
+@media (max-width: 768px) {
+  /* torrent list boxes — light de-clutter pass, iterate on device */
+  td[class*="torrent-search--list__"] {
+    padding: 4px 6px !important;
+    border: none !important;
+  }
+  .torrent-icons { margin-top: 0 !important; }
+  .torrent-search--list__name > a:first-child {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
 }
