@@ -3,7 +3,7 @@
    A Japanese fox-spirit theme for Aither (UNIT3D)
    Author : AzureBelmont
    Repo   : github.com/AzureBelmont/aither-css
-   Ver    : 2.3.3
+   Ver    : 2.4
    Palette
    ────────────────────────────────────────────
    Sakura Pink  #F4AACA   primary accent
@@ -225,8 +225,6 @@ tr.torrent-search--list__sticky-row .torrent-search--list__name > a:first-child 
 .torrent-icons__freeleech { color: var(--k-pink)   !important; }
 .torrent-icons__internal  { color: var(--k-text2)   !important; }
 .torrent-icons__verified  { color: var(--k-matcha)  !important; }
-.torrent-icons { background-color: #84848421 !important; padding: 2px 7px !important; margin-top: 2px !important; border-radius: 10px !important; display: inline-flex !important; width: fit-content !important; }
-.torrent-icons__vision img { filter: invert(1) brightness(0.8) !important; }
 .torrent-search--list__resolution-and-type { background-color: transparent !important; color: var(--k-text2) !important; border: none !important; box-shadow: none !important; }
 
 .internal-card { background-color: var(--k-bg2) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius) !important; overflow: hidden !important; transition: border-color .2s, transform .15s !important; }
@@ -258,8 +256,6 @@ li.subforum-listings__item { background-color: var(--k-bg2) !important; border-b
 li.subforum-listings__item:nth-child(even) { background-color: var(--k-bg3) !important; }
 li.subforum-listings__item:hover { background-color: var(--k-pink-faint) !important; border-left: 3px solid var(--k-pink) !important; }
 
-.key-value__group, div.key-value__group { background-color: var(--k-bg2) !important; border: 0.5px solid var(--k-border) !important; border-radius: 4px !important; color: var(--k-text) !important; }
-
 .wiki__content a:not([style*="color"])       { color: var(--k-pink) !important; }
 .wiki__content a:not([style*="color"]):hover { color: var(--k-pink-soft) !important; }
 
@@ -279,6 +275,7 @@ a.pagination__next, a.pagination__previous { color: var(--k-text2) !important; }
 .pagination__link:hover, a.pagination__link:hover, li.pagination__next:hover, li.pagination__previous:hover, a.pagination__next:hover, a.pagination__previous:hover { background-color: var(--k-bg3) !important; color: var(--k-pink) !important; }
 li.pagination__current, .pagination__current { background-color: var(--k-bg3) !important; color: var(--k-pink) !important; border-color: var(--k-pink-border) !important; font-weight: 600 !important; }
 li.pagination__previous--disabled, li.pagination__next--disabled { background-color: var(--k-bg2) !important; color: var(--k-text3) !important; opacity: 0.5 !important; }
+li.pagination__previous--disabled:hover, li.pagination__next--disabled:hover { background-color: var(--k-bg2) !important; color: var(--k-text3) !important; cursor: default !important; }
 ul.pagination__items { display: flex !important; align-items: center !important; background-color: var(--k-bg2) !important; list-style: none !important; margin: 0 !important; padding: 0 !important; }
 ul.pagination__pages { display: flex !important; align-items: center !important; background-color: transparent !important; list-style: none !important; margin: 0 !important; padding: 0 !important; }
 li.pagination__page-wrapper { background-color: transparent !important; }
@@ -306,15 +303,16 @@ a.form__button[href*="/torrents/download/"]:hover { background-color: rgba(244,1
 
 fieldset, .form__fieldset { border-color: var(--k-border-mid) !important; }
 fieldset.form, .form.form__fieldset, fieldset.form__fieldset { background-color: var(--k-bg3) !important; border-color: var(--k-border-mid) !important; }
-.form__label--floating { background-color: var(--k-bg2) !important; padding: 0 4px !important; color: var(--k-text2) !important; border-radius: 2px !important; }
-fieldset .form__label--floating, [class*="compact-search"] .form__label--floating, [class*="torrent-search"] .form__label--floating { background-color: var(--k-bg3) !important; }
-.form__group:has(select) .form__label--floating, .form__group:has(input:not(:placeholder-shown)) .form__label--floating, .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating { padding: 0 4px !important; }
+.form__label--floating { background-color: transparent !important; color: var(--k-text2) !important; border-radius: 2px !important; }
+fieldset .form__label--floating, [class*="compact-search"] .form__label--floating, [class*="torrent-search"] .form__label--floating { background-color: transparent !important; }
+.form__group:has(select) .form__label--floating, .form__group:has(input:not(:placeholder-shown)) .form__label--floating, .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating { background-color: transparent !important; }
 
-.form__input, input[type="text"], input[type="search"], input[type="email"], input[type="password"], textarea, textarea.form__textarea, .form__textarea { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-border-mid) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-text) !important; font-size: 14px !important; }
+.form__input:not(.quick-search__input), input[type="text"]:not(.quick-search__input):not(.post__tip-input), input[type="search"]:not(.quick-search__input), input[type="email"], input[type="password"], textarea, textarea.form__textarea, .form__textarea { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-border-mid) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-text) !important; font-size: 14px !important; }
 input:focus, textarea:focus, select:focus, .form__input:focus, [type="search"]:focus, [type="text"]:focus, textarea:focus, textarea.form__textarea:focus, .form__textarea:focus { border-color: var(--k-pink) !important; outline: none !important; box-shadow: 0 0 0 3px rgba(244,170,202,0.10) !important; }
 
 .form__select, select.form__select, select { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-text) !important; font-size: 14px !important; }
 .form__select:hover, select:hover { border-color: rgba(244,170,202,0.35) !important; }
+.form__select, .form__select:hover, .form__select:focus, .form__select:focus:hover { border-width: 0.5px !important; padding: 11px 23px 11px 11px !important; }
 
 html body .panel__header .form__button, html body .panel__header .form__button--text { background: transparent !important; border: none !important; color: var(--k-pink) !important; font-size: inherit !important; }
 html body .panel__header .form__select, html body .panel__header select { background-color: rgba(244,170,202,0.04) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-pink) !important; }
@@ -327,7 +325,7 @@ html body .panel__header .form__select, html body .panel__header select { backgr
 .bbcode-input__tab-input:checked + .bbcode-input__tab-label { color: var(--k-pink) !important; border-bottom-color: var(--k-pink) !important; }
 .bbcode-rendered__clipboard { background-color: var(--k-bg3) !important; opacity: 0.85 !important; }
 
-input[type="checkbox"], input[type="radio"] { accent-color: var(--k-pink) !important; }
+input[type="radio"] { accent-color: var(--k-pink) !important; }
 
 .vscomp-wrapper, .vscomp-ele-wrapper, .vscomp-toggle-button { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-border-mid) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-text2) !important; }
 .vscomp-toggle-button:hover { border-color: rgba(244,170,202,0.35) !important; }
@@ -399,6 +397,14 @@ h1.text-gold, h2.text-gold, h3.text-gold, h4.text-gold, .text-gold { color: var(
 #chatbox_header .form__select { border-color: var(--k-pink-border) !important; color: var(--k-text) !important; }
 #chatbox_header .form__select:hover { border-color: rgba(244,170,202,0.35) !important; }
 #chatbox_header .form__label--floating { color: var(--k-pink) !important; }
+#chatbox_header .panel__action { flex: 0 0 auto !important; }
+#currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
+#currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
+
+#chatbox_header .form__button--text, .panelV2.chatbox .panel__header .form__button--text { color: var(--k-text2) !important; }
+#chatbox_header .form__button--text:hover, .panelV2.chatbox .panel__header .form__button--text:hover { color: var(--k-pink) !important; }
+#chatbox_header .form__standard-icon-button, .panelV2.chatbox .panel__header .form__standard-icon-button { color: var(--k-text2) !important; opacity: 0.7 !important; }
+#chatbox_header .form__standard-icon-button:hover, .panelV2.chatbox .panel__header .form__standard-icon-button:hover { color: var(--k-pink) !important; opacity: 1 !important; }
 
 article.chatbox-message { background-color: #060608 !important; position: relative !important; transition: background-color 0.15s ease; border-radius: 0 !important; padding: 5px 8px 5px 0 !important; margin: 0 !important; gap: 0px 8px !important; grid-template-columns: 40px auto 1fr auto !important; align-items: start !important; border-bottom: 1px dashed #222222 !important; }
 article.chatbox-message::before { display: none !important; }
@@ -454,8 +460,8 @@ tr.moderation__details-table--bottom td, tr.moderation__details-table--bottom:nt
 dialog.dialog--auto-width tr:hover td { background-color: var(--k-bg4) !important; }
 
 .group-requirements__group--requirement-row, .group-requirements__group--requirement-multirow { background-color: var(--k-bg3) !important; }
-.group-requirements__group-wrapper:hover { background-color: var(--k-pink-faint) !important; }
-.group-requirements__group--requirement-row:hover { background-color: rgba(244,170,202,0.05) !important; }
+.group-requirements__group-wrapper:hover { background-color: rgba(244,170,202,0.08) !important; }
+.group-requirements__group--requirement-row:hover { background-color: rgba(244,170,202,0.12) !important; }
 
 article.achievement { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-border) !important; border-radius: var(--k-radius) !important; }
 article.achievement progress.achievement__progress { accent-color: var(--k-pink) !important; }
@@ -470,6 +476,7 @@ input[type="file"]::file-selector-button:hover { background-color: var(--k-pink-
 
 .top-nav__dropdown a.top-nav__username, li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username:hover { background-color: transparent !important; }
 li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown ul li a.top-nav__username:hover i.fas { background-color: var(--k-bg3) !important; border-color: transparent !important; }
+li.top-nav__dropdown ul li a.top-nav__username { padding: 8px 0 2px !important; }
 
 @keyframes k-dot-pulse {
   0%, 100% { color: var(--k-pink); filter: drop-shadow(0 0 2px rgba(244,170,202,0.4)); }
@@ -479,8 +486,6 @@ circle[fill="#33B5E5"] { fill: var(--k-pink) !important; }
 circle[stroke="#33B5E5"] { stroke: var(--k-pink) !important; }
 .article-preview-wrapper i, .article-preview i.fas { color: var(--k-pink) !important; }
 article i.fas.fa-circle, .article-preview circle[fill="#33B5E5"] { fill: var(--k-pink) !important; }
-circle[stroke="#33B5E5"] { stroke: var(--k-pink) !important; }
-.article-preview-wrapper i, .article-preview i.fas { color: var(--k-pink) !important; }
 table td i.fas.fa-circle.fa-xs { color: var(--k-pink) !important; animation: k-dot-pulse 2s ease-in-out infinite !important; }
 
 .page__torrent--create fieldset.form__fieldset { border: none !important; background-color: var(--k-bg3) !important; border-radius: var(--k-radius) !important; padding: 10px 14px 12px !important; height: auto !important; }
@@ -489,9 +494,8 @@ table td i.fas.fa-circle.fa-xs { color: var(--k-pink) !important; animation: k-d
 .page__torrent--create .form__group--short-horizontal { align-items: start !important; }
 .page__torrent--create .form__group--horizontal .form__select { background-color: var(--k-bg3) !important; border: 1px solid var(--k-border) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-text) !important; }
 .page__torrent--create .form__group--horizontal .form__select:focus { border-color: rgba(244,170,202,0.4) !important; box-shadow: 0 0 0 2px rgba(244,170,202,0.08) !important; }
-.page__torrent--create .form__group--horizontal .form__label--floating { background-color: var(--k-bg2) !important; }
-.page__torrent--create fieldset .form__label--floating { background-color: var(--k-bg3) !important; }
 .page__torrent--create .panel__sub-heading { border-radius: var(--k-radius-sm) !important; margin-top: 16px !important; border: none !important; }
+
 .group-requirements__group--header h3 > span[style*="color"] { font-size: 0 !important; }
 .group-requirements__group--header h3 > span[style*="95A5A6"], .group-requirements__group--header h3 > span[style*="95a5a6"], .group-requirements__group--header h3 > span[style*="color: red"], .group-requirements__group--header h3 > span[style*="color:red"] { font-size: inherit !important; }
 .group-requirements__group--header h3 > span[style*="5E372F"]::before, .group-requirements__group--header h3 > span[style*="5e372f"]::before { content: "Norowareshi"; font-size: 18px !important; color: #5E372F; }
@@ -581,357 +585,112 @@ a[style*="color:#7FFF00"],a[style*="color: #7FFF00"],a[style*="color:#7fff00"],a
 a[style*="color:#5E372F"],a[style*="color: #5E372F"] { color: #5E372F !important; }
 a[style*="color:#95A5A6"],a[style*="color: #95A5A6"] { color: #95A5A6 !important; }
 
-.topic-listing__post-stats,
-.topic-listing__view-stats {
-  text-align: right !important;
-  min-width: 52px !important;
-  padding-right: 6px !important;
-}
-.topic-listing__post-stats dt,
-.topic-listing__view-stats dt {
-  color: var(--k-text3) !important;
-  font-size: 10px !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .06em !important;
-}
-.topic-listing__post-stats dd,
-.topic-listing__view-stats dd {
-  color: var(--k-text2) !important;
-}
-.topic-listing__latest-post {
-  text-align: right !important;
-  min-width: 110px !important;
-  padding-left: 6px !important;
-}
-.topic-listing__latest-post .topic-listing__latest-author {
-  font-size: 12px !important;
-}
-.topic-listing__latest-post .topic-listing__latest-datetime {
-  font-size: 11px !important;
-  color: var(--k-text3) !important;
-}
-.compact-search,
-.compact-search__visible-default {
-  padding: 6px 8px !important;
-}
-.similar-torrents__filters {
-  display: none !important;
-}
-.collection-posters {
-  overflow-x: hidden !important;
-}
-.compact-search .form__group {
-  margin: 0 !important;
-}
-.compact-search input.form__text,
-.compact-search .form__text {
-  padding: 8px 12px !important;
-  font-size: 13px !important;
-}
+.topic-listing__post-stats, .topic-listing__view-stats { text-align: right !important; min-width: 52px !important; padding-right: 6px !important; }
+.topic-listing__post-stats dt, .topic-listing__view-stats dt { color: var(--k-text3) !important; font-size: 10px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: .06em !important; }
+.topic-listing__post-stats dd, .topic-listing__view-stats dd { color: var(--k-text2) !important; }
+.topic-listing__latest-post { text-align: right !important; min-width: 110px !important; padding-left: 6px !important; }
+.topic-listing__latest-post .topic-listing__latest-author { font-size: 12px !important; }
+.topic-listing__latest-post .topic-listing__latest-datetime { font-size: 11px !important; color: var(--k-text3) !important; }
+.compact-search, .compact-search__visible-default { padding: 6px 8px !important; }
+.similar-torrents__filters { display: none !important; }
+.collection-posters { overflow-x: hidden !important; }
+.compact-search .form__group { margin: 0 !important; }
+.compact-search input.form__text, .compact-search .form__text { padding: 8px 12px !important; font-size: 13px !important; }
 
-li.top-nav__dropdown ul li i.fas,
-li.top-nav__dropdown ul li i.far,
-li.top-nav__dropdown ul li i.fab {
-  width: 30px !important;
-  height: 30px !important;
-  text-align: center !important;
-}
+a.pagination__link { min-width: 48px !important; text-align: center !important; }
+.panel__action-text { color: var(--k-text3) !important; font-size: 12px !important; font-weight: 400 !important; }
+.panelV2 > .panel__heading { background-color: var(--k-bg2) !important; border-bottom: 0.5px solid var(--k-border) !important; }
+div.top-users__place { border: 2px solid var(--k-pink) !important; color: var(--k-pink) !important; font-weight: 700 !important; }
+article.user-stat-card, .user-stat-card { border: 1px solid var(--k-pink-border) !important; }
+.user-stat-card__avatar { border: 2px solid rgba(244,170,202,0.25) !important; border-radius: 10% !important; }
+.internal-card__header { background-color: var(--k-bg3) !important; }
+.internal-card__footer { background-color: var(--k-bg3) !important; }
+.torrent-search--list__no-poster-headers th { white-space: nowrap !important; }
 
-a.pagination__link {
-  min-width: 48px !important;
-  text-align: center !important;
-}
-
-.panel__action-text {
-  color: var(--k-text3) !important;
-  font-size: 12px !important;
-  font-weight: 400 !important;
-}
-
-.panelV2 > .panel__heading {
-  background-color: var(--k-bg2) !important;
-  border-bottom: 0.5px solid var(--k-border) !important;
-}
-
-div.top-users__place {
-  border: 2px solid var(--k-pink) !important;
-  color: var(--k-pink) !important;
-  font-weight: 700 !important;
-}
-article.user-stat-card, .user-stat-card {
-  border: 1px solid var(--k-pink-border) !important;
-}
-.user-stat-card__avatar {
-  border: 2px solid rgba(244,170,202,0.25) !important;
-  border-radius: 10% !important;
-}
-
-.internal-card__header {
-  background-color: var(--k-bg3) !important;
-}
-.internal-card__footer {
-  background-color: var(--k-bg3) !important;
-}
-
-.torrent-search--list__no-poster-headers th {
-  white-space: nowrap !important;
-}
-
-.data-table:not(.similar-torrents__torrents) td[rowspan],
-.data-table:not(.similar-torrents__torrents):has(td[rowspan]) th:first-child {
-  width: 0 !important; max-width: 0 !important; min-width: 0 !important;
-  padding: 0 !important; font-size: 0 !important; border: none !important;
-  overflow: hidden !important;
-}
-
-table.similar-torrents__torrents a[title="Edit"],
-table.similar-torrents__torrents button[title="Bookmark"],
-table.similar-torrents__torrents a[title="Download"] {
-  color: var(--k-pink) !important; opacity: 0.65 !important;
-  background: transparent !important; border: none !important;
-  transition: opacity .15s, filter .15s !important;
-}
-table.similar-torrents__torrents a[title="Edit"]:hover,
-table.similar-torrents__torrents button[title="Bookmark"]:hover,
-table.similar-torrents__torrents a[title="Download"]:hover {
-  opacity: 1 !important; color: var(--k-pink) !important;
-  filter: drop-shadow(0 0 4px rgba(244,170,202,0.5)) !important;
-}
+table.similar-torrents__torrents a[title="Edit"], table.similar-torrents__torrents button[title="Bookmark"], table.similar-torrents__torrents a[title="Download"] { color: var(--k-pink) !important; opacity: 0.65 !important; background: transparent !important; border: none !important; transition: opacity .15s, filter .15s !important; }
+table.similar-torrents__torrents a[title="Edit"]:hover, table.similar-torrents__torrents button[title="Bookmark"]:hover, table.similar-torrents__torrents a[title="Download"]:hover { opacity: 1 !important; color: var(--k-pink) !important; filter: drop-shadow(0 0 4px rgba(244,170,202,0.5)) !important; }
 
 .internal-card__footer { overflow: hidden !important; scrollbar-width: none !important; }
 .internal-card__footer::-webkit-scrollbar { display: none !important; }
 .internal-card__left-footer { overflow: hidden !important; min-width: 0 !important; }
 .internal-card__title { overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; display: inline-block !important; max-width: 100% !important; vertical-align: bottom !important; }
 
-.torrent__mediainfo-header,
-.panel__heading:has(.form__standard-icon-button) {
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-}
+.torrent__mediainfo-header, .panel__heading:has(.form__standard-icon-button) { display: flex !important; align-items: center !important; gap: 6px !important; }
+ul.torrent__tags { align-items: center !important; }
+ul.torrent__tags > li::after { color: var(--k-pink) !important; }
+ul.torrent__tags .torrent-icons { margin-left: 4px !important; }
+.work__tags > li > a:hover, .meta__ids > li > a:hover { background-color: transparent !important; }
+.meta__ids > li > a, .meta__ids > li > a:hover { border-radius: 6px !important; }
+h2.meta__heading { margin-top: 0 !important; margin-bottom: 6px !important; }
+.trending-poster__download-count { background: var(--k-bg3) !important; border: 2px solid var(--k-pink) !important; color: var(--k-pink) !important; }
+.form__button--text abbr { filter: brightness(.65) !important; color: var(--k-text2) !important; text-decoration: none !important; font-weight: inherit !important; }
+details.torrent-search--grouped__dropdown > details.torrent-search--grouped__dropdown + details.torrent-search--grouped__dropdown { border-top: 2px solid rgba(244,170,202,0.25) !important; margin-top: 4px !important; }
 
-ul.torrent__tags {
-  align-items: center !important;
-}
-ul.torrent__tags > li::after {
-  color: var(--k-pink) !important;
-}
-ul.torrent__tags .torrent-icons {
-  margin-left: 4px !important;
-}
+.top-nav--left__list-item > a:hover, .top-nav--left__list-item:hover > a, li.top-nav__dropdown > a:hover, li.top-nav__dropdown:hover > a { color: var(--k-pink) !important; background-color: transparent !important; }
 
-.work__tags > li > a:hover,
-.meta__ids > li > a:hover {
-  background-color: transparent !important;
-}
+.torrent-icons { background-color: #84848421 !important; padding: 2px 7px !important; margin-top: 2px !important; border-radius: 10px !important; display: inline-flex !important; align-items: center !important; flex-wrap: nowrap !important; gap: 6px !important; width: fit-content !important; vertical-align: middle !important; }
+.torrent-icons__vision { display: inline-flex !important; align-items: center !important; }
+.torrent-icons img { display: inline-block !important; vertical-align: middle !important; height: 14px !important; width: auto !important; filter: invert(1) brightness(0.8) !important; }
 
-.meta__ids > li > a,
-.meta__ids > li > a:hover {
-  border-radius: 6px !important;
-}
-
-h2.meta__heading {
-  margin-top: 0 !important;
-  margin-bottom: 6px !important;
-}
-
-.trending-poster__download-count {
-  color: var(--k-pink) !important;
-}
-
-.trending-poster__download-count {
-    background: var(--k-bg3) !important;
-    border: 2px solid var(--k-pink) !important;
-    color: var(--k-pink) !important;
-}
-
-.form__button--text abbr {
-    filter: brightness(.65) !important;
-    color: var(--k-text2) !important;
-    text-decoration: none !important;
-    font-weight: inherit !important;
-}
-
-details.torrent-search--grouped__dropdown > details.torrent-search--grouped__dropdown + details.torrent-search--grouped__dropdown {
-  border-top: 2px solid rgba(244,170,202,0.25) !important;
-  margin-top: 4px !important;
-}
-
-/* ── fork: torrent icon pill alignment ─────────────────────
-   centers stars/badges vertically + stops wrapping */
-.torrent-icons {
-  align-items: center !important;
-  flex-wrap: nowrap !important;
-  gap: 6px !important;
-  vertical-align: middle !important;
-}
-.torrent-icons__vision {
-  display: inline-flex !important;
-  align-items: center !important;
-}
-/* cover EVERY badge image (DV, HDR, HDR10+), not just __vision —
-   fixes HDR10+ not inverting on mobile */
-.torrent-icons img {
-  display: inline-block !important;
-  vertical-align: middle !important;
-  height: 14px !important;
-  width: auto !important;
-  filter: invert(1) brightness(0.8) !important;
-}
- 
-/* ── fork: sticky/featured row hover ── */
 tr.torrent-search--list__sticky-row:hover td { background-color: transparent !important; }
 tr.torrent-search--list__sticky-row:hover { background-color: rgba(244,170,202,0.10) !important; }
- 
-/* ── fork: donation page layout ── */
-.donation__item { max-width: 380px !important; }
-.donation__item--body { padding: 30px 16px 10px !important; }
- 
-/* ── fork: panel-header selects shouldn't collapse ── */
-html body .panel__header select,
-html body .panel__header .form__select { min-width: 100px !important; }
- 
-/* ── fork: stronger group-requirements hovers ── */
-.group-requirements__group-wrapper:hover { background-color: rgba(244,170,202,0.08) !important; }
-.group-requirements__group--requirement-row:hover { background-color: rgba(244,170,202,0.12) !important; }
- 
-/* ── fork: hover the whole li, not just the anchor ── */
-.top-nav--left__list-item > a:hover, .top-nav--left__list-item:hover > a,
-li.top-nav__dropdown > a:hover, li.top-nav__dropdown:hover > a {
-  color: var(--k-pink) !important;
-  background-color: transparent !important;
-}
- 
-/* ==========================================================
-   NOTES FIXES
-   ========================================================== */
- 
-/* ── note: dropdown circle icons sit too low / off-center
-   (torrents, upload, pending, forums, playlists…) ── */
-.top-nav--left__list-item ul li i.fas,
-.top-nav--left__list-item ul li i.far,
-.top-nav--left__list-item ul li i.fab,
-li.top-nav__dropdown ul li i.fas,
-li.top-nav__dropdown ul li i.far,
-li.top-nav__dropdown ul li i.fab {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-  padding: 0 !important;
-}
-.top-nav--right__icon-link i.fas,
-.top-nav--right__icon-link i.far,
-.top-nav--right__link i.fas {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-}
- 
-/* ── note: floating label crosses the border again when a field
-   is FOCUSED but still empty (the :has(:not(:placeholder-shown))
-   rules only cover filled fields) ── */
-.form__group:focus-within .form__label--floating {
-  background-color: var(--k-bg2) !important;
-  padding: 0 4px !important;
-}
-fieldset .form__group:focus-within .form__label--floating,
-[class*="compact-search"] .form__group:focus-within .form__label--floating,
-[class*="torrent-search"] .form__group:focus-within .form__label--floating,
-.page__torrent--create fieldset .form__group:focus-within .form__label--floating {
-  background-color: var(--k-bg3) !important;
-}
- 
-/* ── note: checkboxes use a white check instead of black ──
-   accent-color leaves the glyph colour up to the browser (iOS
-   picks white on sakura pink). Custom-drawn box with a black
-   check. SITE-WIDE — delete this block if you don't like it. */
-input[type="checkbox"] {
-  -webkit-appearance: none !important;
-  appearance: none !important;
-  width: 15px !important;
-  height: 15px !important;
-  border: 1px solid var(--k-border-mid) !important;
-  border-radius: 4px !important;
-  background-color: var(--k-bg3) !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-  position: relative !important;
-  cursor: pointer !important;
-}
+
+.donation-packages { gap: 16px !important; }
+.donation-package__wrapper { max-width: calc(25% - 16px) !important; padding: 20px 12px !important; background-color: var(--k-bg3) !important; border: 1px solid rgba(244,170,202,0.55) !important; border-radius: var(--k-radius) !important; transition: border-color .2s, box-shadow .2s !important; }
+.donation-package__wrapper:hover { border-color: var(--k-pink) !important; box-shadow: 0 0 14px rgba(244,170,202,0.25) !important; }
+
+html body .panel__header select, html body .panel__header .form__select { min-width: 110px !important; }
+
+td.data-table__bon-taxed { display: table-cell !important; vertical-align: middle !important; }
+td.data-table__bon-taxed i.fa-percent { margin-left: 4px !important; }
+
+.quick-search__input, input.quick-search__input { border-radius: var(--quick-search-border-radius, 16px) !important; }
+.quick-search:active .quick-search__input, .quick-search:focus-within .quick-search__input { border-radius: var(--quick-search-border-radius, 16px) var(--quick-search-border-radius, 16px) 0 0 !important; }
+.post__tip-input, .post__tip-input:focus { border: none !important; border-radius: 2px !important; }
+
+.top-nav--left__list-item ul li i.fas, .top-nav--left__list-item ul li i.far, .top-nav--left__list-item ul li i.fab, li.top-nav__dropdown ul li i.fas, li.top-nav__dropdown ul li i.far, li.top-nav__dropdown ul li i.fab { width: 32px !important; height: 32px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; padding: 0 !important; }
+.top-nav--right__icon-link i.fas, .top-nav--right__icon-link i.far, .top-nav--right__link i.fas { display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; }
+
+input[type="checkbox"] { -webkit-appearance: none !important; appearance: none !important; width: 15px !important; height: 15px !important; border: 1px solid var(--k-border-mid) !important; border-radius: 4px !important; background-color: var(--k-bg3) !important; display: inline-block !important; vertical-align: middle !important; position: relative !important; cursor: pointer !important; }
 input[type="checkbox"]:hover { border-color: var(--k-pink) !important; }
-input[type="checkbox"]:checked {
-  background-color: var(--k-pink) !important;
-  border-color: var(--k-pink) !important;
-}
-input[type="checkbox"]:checked::before {
-  content: "" !important;
-  position: absolute !important;
-  left: 4.5px;
-  top: 1.5px;
-  width: 4px;
-  height: 8px;
-  border: solid #000 !important;
-  border-width: 0 2px 2px 0 !important;
-  transform: rotate(45deg) !important;
-}
-input[type="checkbox"]:disabled {
-  opacity: 0.6 !important;
-  cursor: default !important;
-}
- 
-/* ── note: gifts page layout broken ──
-   the global td[rowspan] kill-rule (meant for history tables)
-   nukes the legit rowspan points column on /users/X/gifts.
-   Restore rowspan cells on gift pages. If the main class on
-   that page isn't page__*gift*, retarget this. */
-main[class*="gift"] .data-table td[rowspan],
-main[class*="gift"] .data-table:has(td[rowspan]) th:first-child {
-  width: auto !important;
-  max-width: none !important;
-  min-width: 0 !important;
-  padding: 8px 12px !important;
-  font-size: 13px !important;
-  overflow: visible !important;
-  border-bottom: 0.5px solid var(--k-border-faint) !important;
-}
-main[class*="gift"] .data-table td { vertical-align: middle !important; }
- 
-/* ── note: stats page uses 3 different colours ──
-   normalize everything to bg2/bg3 striping */
-main[class*="stat"] .panel__body { background-color: var(--k-bg2) !important; }
-main[class*="stat"] table td,
-main[class*="stat"] .key-value__group dd { background-color: var(--k-bg2) !important; }
-main[class*="stat"] tr:nth-child(even) td { background-color: var(--k-bg3) !important; }
-main[class*="stat"] th,
-main[class*="stat"] thead td,
-main[class*="stat"] .key-value__group dt {
-  background-color: var(--k-bg3) !important;
-  color: var(--k-text2) !important;
-}
-main[class*="stat"] tr:hover td { background-color: var(--k-pink-faint) !important; }
- 
-/* ── note: mobile ── */
+input[type="checkbox"]:checked { background-color: var(--k-pink) !important; border-color: var(--k-pink) !important; }
+input[type="checkbox"]:checked::before { content: "" !important; position: absolute !important; left: 4.5px; top: 1.5px; width: 4px; height: 8px; border: solid #000 !important; border-width: 0 2px 2px 0 !important; transform: rotate(45deg) !important; }
+input[type="checkbox"]:disabled { opacity: 0.6 !important; cursor: default !important; }
+
+.page__stats--index .key-value__group { background-color: var(--k-bg2) !important; border: none !important; border-bottom: 1px solid rgba(255,255,255,0.04) !important; border-radius: 0 !important; padding: 7px 12px !important; }
+.page__stats--index .key-value__group:nth-child(even) { background-color: var(--k-bg3) !important; }
+.page__stats--index .key-value__group:last-child { border-bottom: none !important; }
+.page__stats--index .key-value__group dt { color: var(--k-text2) !important; }
+.page__stats--index .key-value__group dd { color: var(--k-text) !important; }
+.page__stats--index .key-value__group--nested { background-color: transparent !important; border: none !important; padding: 0 !important; }
+.page__stats--index .key-value__group--nested > dt { color: var(--k-pink) !important; font-size: 11px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: .08em !important; padding: 10px 12px 6px !important; background: transparent !important; }
+.page__stats--index .key-value__group--nested > dd { margin: 0 !important; }
+.page__stats--index .key-value { gap: 0 !important; }
+
+i.category__icon { color: #bababa !important; }
+
+article.torrent-search--grouped__result { background-color: var(--k-bg2) !important; border: 0.5px solid var(--k-border) !important; border-radius: var(--k-radius) !important; overflow: hidden !important; }
+.torrent-search--grouped__plot { color: var(--k-text2) !important; }
+details.torrent-search--grouped__dropdown summary { background-color: var(--k-bg3) !important; }
+a.torrent-search--grouped__genre { border-color: rgba(244,170,202,0.25) !important; }
+a.torrent-search--grouped__genre:hover { border-color: var(--k-pink) !important; color: var(--k-pink) !important; }
+table.torrent-search--grouped__torrents tbody:nth-of-type(odd) td, table.torrent-search--grouped__torrents tbody:nth-of-type(odd) th { background-color: var(--k-bg2) !important; }
+table.torrent-search--grouped__torrents tbody:nth-of-type(even) td, table.torrent-search--grouped__torrents tbody:nth-of-type(even) th { background-color: var(--k-bg3) !important; }
+table.torrent-search--grouped__torrents tbody + tbody { border-top: 2px solid var(--k-pink-border) !important; }
+table.torrent-search--grouped__torrents tbody th { border-bottom: none !important; border-right: none !important; color: var(--k-text2) !important; }
+table.torrent-search--grouped__torrents tr:hover td { background-color: rgba(244,170,202,0.06) !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table { display: block !important; height: 0 !important; border: none !important; overflow: visible !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead { display: block !important; position: relative !important; height: 0 !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead tr { display: block !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead th { background: transparent !important; border: none !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) th.torrent-search--list__completed-header { display: none !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) th.torrent-search--list__age-header { position: absolute !important; right: 16px !important; top: -37px !important; display: block !important; z-index: 5 !important; }
+
 @media (max-width: 1100px) {
-  /* dropdown could use a border on mobile */
-  .top-nav--left__dropdown,
-  .top-nav--left__list-item ul,
-  li.top-nav__dropdown > ul {
-    border: 1px solid var(--k-pink-border) !important;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.85) !important;
-  }
+  .top-nav--left__dropdown, .top-nav--left__list-item ul, li.top-nav__dropdown > ul { border: 1px solid var(--k-pink-border) !important; box-shadow: 0 12px 32px rgba(0,0,0,0.85) !important; }
 }
 @media (max-width: 768px) {
-  /* torrent list boxes — light de-clutter pass, iterate on device */
-  td[class*="torrent-search--list__"] {
-    padding: 4px 6px !important;
-    border: none !important;
-  }
+  td[class*="torrent-search--list__"] { padding: 4px 6px !important; border: none !important; }
   .torrent-icons { margin-top: 0 !important; }
-  .torrent-search--list__name > a:first-child {
-    font-size: 13px !important;
-    line-height: 1.3 !important;
-  }
+  .torrent-search--list__name > a:first-child { font-size: 13px !important; line-height: 1.3 !important; }
 }
