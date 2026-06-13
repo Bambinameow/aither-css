@@ -526,8 +526,18 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 #currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 
-#currentChatroom.form__select, #currentChatroom.form__select:hover, #currentChatroom.form__select:focus, #currentChatroom.form__select:focus:hover,
-#currentChatstatus.form__select, #currentChatstatus.form__select:hover, #currentChatstatus.form__select:focus, #currentChatstatus.form__select:focus:hover {
+/* Global: every .form__select shifts its text on :hover/:focus
+   because the base theme swaps border 1px→2px and padding
+   11/23→10/22 (--select-border/padding-*). With box-sizing:
+   border-box that reflows the option text. Text inputs don't jump
+   because their padding swap is symmetric (12→11) and cancels the
+   border bump; selects use asymmetric padding so they wobble. Hold
+   the box model constant in every state across all selects — the
+   gold border-COLOR still changes for hover feedback. */
+.form__select,
+.form__select:hover,
+.form__select:focus,
+.form__select:focus:hover {
   border-width: 1px !important;
   padding: 11px 23px 11px 11px !important;
 }
