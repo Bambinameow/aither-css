@@ -532,12 +532,6 @@ a[style*="color:#95A5A6"],a[style*="color: #95A5A6"] { color: #95A5A6 !important
 .post__content.bbcode-rendered, .post__header, .comment__content.bbcode-rendered, .comment__header { background-color: #151e2e; }
 .bbcode-rendered.bbcode-rendered blockquote { background-color: #121823 !important; border: 2px dotted #3e4455 !important; }
 
-/* In-prose links: the global link color is near-white so nav/table
-   links stay neutral, but that leaves links buried inside flowing
-   body text indistinguishable. Give links inside rendered BBCode and
-   profile/panel prose an accent tint + underline so they read as
-   links at rest (not just on hover). Scoped to content containers so
-   nav menus, usernames, and table cells are untouched. */
 :root { --bbcode-rendered-accent-fg: var(--at-gold); --bbcode-rendered-accent-emphasis: var(--at-gold2); }
 .bbcode-rendered a:not(.form__button):not([class*="button"]),
 .user-profile__column a:not(.form__button):not([class*="button"]):not(.user-tag__link):not([class*="nav-tab"]):not(.panel__heading):not(.meta__title-link),
@@ -558,14 +552,6 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 #currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 
-/* Global: every .form__select shifts its text on :hover/:focus
-   because the base theme swaps border 1px→2px and padding
-   11/23→10/22 (--select-border/padding-*). With box-sizing:
-   border-box that reflows the option text. Text inputs don't jump
-   because their padding swap is symmetric (12→11) and cancels the
-   border bump; selects use asymmetric padding so they wobble. Hold
-   the box model constant in every state across all selects — the
-   gold border-COLOR still changes for hover feedback. */
 .form__select,
 .form__select:hover,
 .form__select:focus,
