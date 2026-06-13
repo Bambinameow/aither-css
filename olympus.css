@@ -29,6 +29,10 @@
   --key-value-odd-bg:              #111928;
   --key-value-even-bg:             #151e2e;
   --color-links:                   #dde1f0;
+  --breadcrumb-fg:                 #7a80a0;
+  --breadcrumb-active-fg:          #dde1f0;
+  --breadcrumb-hover-fg:           #f5a623;
+  --notification-unread:           #f5a623;
   --color-links-hover:             #f5a623;
   --panel-head-fg:                 #f5a623;
   --quick-search-bg:               #131b2e;
