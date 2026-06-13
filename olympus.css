@@ -1,4 +1,17 @@
-/* Aither — Olympus theme · gold on navy · AzureBelmont */
+/* ==========================================================
+   Aither — Greek Theme
+   Gold accents. Dark panels. Clean.
+   Author : AzureBelmont
+   Repo   : github.com/AzureBelmont/aither-css
+   Ver    : 2.3.0
+   Palette
+   ────────────────────────────────────────────
+   Gold         #f5a623   primary accent
+   Navy         #080b16   page background
+   Panel        #111928   surfaces
+   Text         #dde1f0   body text
+========================================================== */
+
 :root {
   --at-bg:        #080b16;
   --at-bg2:       #111928;
@@ -85,6 +98,9 @@ li.top-nav__dropdown ul li a i.fas.fa-heartbeat, li.top-nav__dropdown ul li i.fa
 .top-nav--left__list-item ul, .top-nav__dropdown ul, .top-nav--left__dropdown { background-color: var(--at-bg3) !important; border: 0.5px solid var(--at-goldfaint) !important; border-radius: var(--at-radius) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important; }
 .top-nav--left__list-item ul li a, .top-nav__dropdown ul li a, li.top-nav__dropdown ul li a { color: var(--at-text) !important; transition: color .15s, background .15s !important; }
 .top-nav--left__list-item ul li a:hover, .top-nav__dropdown ul li a:hover, li.top-nav__dropdown ul li a:hover { background-color: var(--at-goldfaint) !important; color: var(--at-gold) !important; }
+li.top-nav__dropdown ul li button.top-nav--right__link { color: var(--at-text) !important; transition: color .15s, background .15s !important; }
+li.top-nav__dropdown ul li button.top-nav--right__link:hover { background-color: var(--at-goldfaint) !important; color: var(--at-gold) !important; }
+li.top-nav__dropdown ul li button.top-nav--right__link:hover i { color: var(--at-gold) !important; }
 
 .top-nav--left__list-item ul li i.fas, .top-nav--left__list-item ul li i.far, .top-nav--left__list-item ul li i.fab, li.top-nav__dropdown ul li i.fas, li.top-nav__dropdown ul li i.far, li.top-nav__dropdown ul li i.fab { background-color: var(--at-bg2) !important; border: 1px solid var(--at-border) !important; color: var(--at-text2) !important; }
 .top-nav--left__list-item ul li a:hover i.fas, li.top-nav__dropdown ul li a:hover i.fas { background-color: var(--at-goldfaint) !important; border-color: var(--at-gold) !important; color: var(--at-gold) !important; }
@@ -517,6 +533,14 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 #currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 
+/* Global: every .form__select shifts its text on :hover/:focus
+   because the base theme swaps border 1px→2px and padding
+   11/23→10/22 (--select-border/padding-*). With box-sizing:
+   border-box that reflows the option text. Text inputs don't jump
+   because their padding swap is symmetric (12→11) and cancels the
+   border bump; selects use asymmetric padding so they wobble. Hold
+   the box model constant in every state across all selects — the
+   gold border-COLOR still changes for hover feedback. */
 .form__select,
 .form__select:hover,
 .form__select:focus,
