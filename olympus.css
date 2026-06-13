@@ -1,17 +1,4 @@
-/* ==========================================================
-   Aither — Greek Theme
-   Gold accents. Dark panels. Clean.
-   Author : AzureBelmont
-   Repo   : github.com/AzureBelmont/aither-css
-   Ver    : 2.3.0
-   Palette
-   ────────────────────────────────────────────
-   Gold         #f5a623   primary accent
-   Navy         #080b16   page background
-   Panel        #111928   surfaces
-   Text         #dde1f0   body text
-========================================================== */
-
+/* Aither — Olympus theme · gold on navy · AzureBelmont */
 :root {
   --at-bg:        #080b16;
   --at-bg2:       #111928;
@@ -520,8 +507,8 @@ a[style*="color:#95A5A6"],a[style*="color: #95A5A6"] { color: #95A5A6 !important
 .post__content.bbcode-rendered, .post__header, .comment__content.bbcode-rendered, .comment__header { background-color: #151e2e; }
 .bbcode-rendered.bbcode-rendered blockquote { background-color: #121823 !important; border: 2px dotted #3e4455 !important; }
 
-.top-nav__dropdown a.top-nav__username i.fas, .top-nav__dropdown a.top-nav__username i.far { background-color: var(--at-bg3) !important; border-color: transparent !important; }
-li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown ul li a.top-nav__username:hover i.fas { background-color: var(--at-bg3) !important; border-color: transparent !important; }
+.top-nav__dropdown a.top-nav__username i.fas, .top-nav__dropdown a.top-nav__username i.far { background-color: transparent !important; border-color: transparent !important; }
+li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown ul li a.top-nav__username:hover i.fas { background-color: transparent !important; border-color: transparent !important; }
 .top-nav__dropdown a.top-nav__username, li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username:hover { background-color: transparent !important; }
 #chatbox_header .form__select { border-color: rgba(245,166,35,0.22) !important; }
 #chatbox_header .form__select:hover { border-color: rgba(245,166,35,0.45) !important; }
@@ -530,14 +517,6 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 #currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 
-/* Global: every .form__select shifts its text on :hover/:focus
-   because the base theme swaps border 1px→2px and padding
-   11/23→10/22 (--select-border/padding-*). With box-sizing:
-   border-box that reflows the option text. Text inputs don't jump
-   because their padding swap is symmetric (12→11) and cancels the
-   border bump; selects use asymmetric padding so they wobble. Hold
-   the box model constant in every state across all selects — the
-   gold border-COLOR still changes for hover feedback. */
 .form__select,
 .form__select:hover,
 .form__select:focus,
