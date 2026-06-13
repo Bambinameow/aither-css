@@ -381,6 +381,40 @@ input.form__text { border-color: rgba(255,255,255,0.17); }
 .torrent-search--grouped__dropdown tbody { background-color: transparent !important; }
 .torrent-search--grouped__header { background-color: var(--at-bg3) !important; }
 
+/* ── Grouped view (/torrents?view=group): unify surfaces ──
+   The article cards were aither-dark's untouched #1c1c1c gray
+   (same bug as the donation cards); the rowspan type cells painted
+   solid bg3 boxes against the zebra rows, leaving stepped seams —
+   a transparent rail with a hairline separator reads cleaner. */
+article.torrent-search--grouped__result { background-color: var(--at-bg2) !important; border: 0.5px solid var(--at-border) !important; border-radius: var(--at-radius) !important; overflow: hidden !important; }
+.torrent-search--grouped__plot { color: var(--at-text2) !important; }
+details.torrent-search--grouped__dropdown summary { background-color: var(--at-bg3) !important; }
+a.torrent-search--grouped__genre { border-color: rgba(245,166,35,0.25) !important; }
+a.torrent-search--grouped__genre:hover { border-color: var(--at-gold) !important; color: var(--at-gold) !important; }
+
+/* Type sections band per tbody, exactly like similar-torrents:
+   one tbody per quality group, alternating bg2/bg3 with gold-faint
+   dividers. Overrides the generic per-row zebra inside these tables. */
+table.torrent-search--grouped__torrents tbody:nth-of-type(odd) td,
+table.torrent-search--grouped__torrents tbody:nth-of-type(odd) th { background-color: var(--at-bg2) !important; }
+table.torrent-search--grouped__torrents tbody:nth-of-type(even) td,
+table.torrent-search--grouped__torrents tbody:nth-of-type(even) th { background-color: var(--at-bg3) !important; }
+table.torrent-search--grouped__torrents tbody + tbody { border-top: 2px solid var(--at-goldfaint) !important; }
+table.torrent-search--grouped__torrents tbody th { border-bottom: none !important; border-right: none !important; color: var(--at-text2) !important; }
+table.torrent-search--grouped__torrents tr:hover td { background-color: rgba(245,166,35,0.06) !important; }
+
+/* Group view wastes a whole bar on a thead holding only the
+   Completed sort + Created at. Hide the Completed toggle, collapse
+   the bar, and absolutely lift Created at into the pagination row
+   (right side). The thead's table is a sibling of the grouped
+   results inside section.torrent-search__results, hence the :has. */
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table { display: block !important; height: 0 !important; border: none !important; overflow: visible !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead { display: block !important; position: relative !important; height: 0 !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead tr { display: block !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead th { background: transparent !important; border: none !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) th.torrent-search--list__completed-header { display: none !important; }
+.torrent-search__results:has(.torrent-search--grouped__results) th.torrent-search--list__age-header { position: absolute !important; right: 16px !important; top: -37px !important; display: block !important; z-index: 5 !important; }
+
 .page__event--index .top-nav__dropdown > a { color: var(--at-text) !important; transition: color .15s, background .15s !important; }
 .page__event--index .top-nav__dropdown > a:hover { background-color: var(--at-goldfaint) !important; color: var(--at-gold) !important; }
 .page__event--index .panel__body { background-color: var(--at-bg2) !important; }
