@@ -10,13 +10,7 @@
    Navy         #080b16   page background
    Panel        #111928   surfaces
    Text         #dde1f0   body text
-
-   FORK POINT: https://github.com/AzureBelmont/aither-css/blob/5ad6c6bd73073d8352b0ff876744d205dd48235a/olympus.css
-   2.3.0: fork-point blues kept for consistency; carried over
-   donation/panel-header/group-hover blocks; live-DOM verified
-   fixes for gifts table, HDR10+, quick-search radius, user
-   dropdown padding (see FIXES section at the bottom).
-   ========================================================== */
+========================================================== */
 
 :root {
   --at-bg:        #080b16;
@@ -122,7 +116,7 @@ li.top-nav__dropdown ul li a i.fas.fa-heartbeat, li.top-nav__dropdown ul li i.fa
 .alert i, .special-event-alert i { color: var(--at-gold) !important; }
 div.alerts, .alerts { background-color: var(--at-bg3) !important; }
 
-.quick-search__input, input.quick-search__input { background-color: #1c2336 !important; border: 1px solid var(--at-border) !important; color: var(--at-text) !important; } /*#202944*/
+.quick-search__input, input.quick-search__input { background-color: #1c2336 !important; border: 1px solid var(--at-border) !important; color: var(--at-text) !important; }
 input.quick-search__input:focus { background-color: #1c2336 !important; border: 1px solid rgba(245,166,35,0.6) !important; border-bottom: 1px solid rgba(255,255,255,0.04) !important; box-shadow: none !important; outline: none !important; }
 article.quick-search__result:nth-child(odd) { background-color: #070b15 !important; }
 article.quick-search__result:nth-child(even) { background-color: #0a0f1c !important; }
@@ -301,9 +295,7 @@ li.pagination__previous--disabled:hover, li.pagination__next--disabled:hover { b
 
 fieldset, .form__fieldset { border-color: rgba(255,255,255,0.12) !important; }
 fieldset.form, .form.form__fieldset, fieldset.form__fieldset { background-color: var(--at-bg3) !important; border-color: rgba(255,255,255,0.10) !important; }
-/* Floating labels: NO background in any state, anywhere — same
-   bare treatment as the chatbox. Floated labels sit directly on
-   the field's border line (known, accepted tradeoff). */
+
 .form__label--floating { background-color: transparent !important; color: var(--at-text2) !important; border-radius: 2px !important; }
 fieldset .form__label--floating, [class*="compact-search"] .form__label--floating, [class*="torrent-search"] .form__label--floating { background-color: transparent !important; }
 .form__group:has(select) .form__label--floating, .form__group:has(input:not(:placeholder-shown)) .form__label--floating, .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating { background-color: transparent !important; }
@@ -381,20 +373,12 @@ input.form__text { border-color: rgba(255,255,255,0.17); }
 .torrent-search--grouped__dropdown tbody { background-color: transparent !important; }
 .torrent-search--grouped__header { background-color: var(--at-bg3) !important; }
 
-/* ── Grouped view (/torrents?view=group): unify surfaces ──
-   The article cards were aither-dark's untouched #1c1c1c gray
-   (same bug as the donation cards); the rowspan type cells painted
-   solid bg3 boxes against the zebra rows, leaving stepped seams —
-   a transparent rail with a hairline separator reads cleaner. */
 article.torrent-search--grouped__result { background-color: var(--at-bg2) !important; border: 0.5px solid var(--at-border) !important; border-radius: var(--at-radius) !important; overflow: hidden !important; }
 .torrent-search--grouped__plot { color: var(--at-text2) !important; }
 details.torrent-search--grouped__dropdown summary { background-color: var(--at-bg3) !important; }
 a.torrent-search--grouped__genre { border-color: rgba(245,166,35,0.25) !important; }
 a.torrent-search--grouped__genre:hover { border-color: var(--at-gold) !important; color: var(--at-gold) !important; }
 
-/* Type sections band per tbody, exactly like similar-torrents:
-   one tbody per quality group, alternating bg2/bg3 with gold-faint
-   dividers. Overrides the generic per-row zebra inside these tables. */
 table.torrent-search--grouped__torrents tbody:nth-of-type(odd) td,
 table.torrent-search--grouped__torrents tbody:nth-of-type(odd) th { background-color: var(--at-bg2) !important; }
 table.torrent-search--grouped__torrents tbody:nth-of-type(even) td,
@@ -403,11 +387,6 @@ table.torrent-search--grouped__torrents tbody + tbody { border-top: 2px solid va
 table.torrent-search--grouped__torrents tbody th { border-bottom: none !important; border-right: none !important; color: var(--at-text2) !important; }
 table.torrent-search--grouped__torrents tr:hover td { background-color: rgba(245,166,35,0.06) !important; }
 
-/* Group view wastes a whole bar on a thead holding only the
-   Completed sort + Created at. Hide the Completed toggle, collapse
-   the bar, and absolutely lift Created at into the pagination row
-   (right side). The thead's table is a sibling of the grouped
-   results inside section.torrent-search__results, hence the :has. */
 .torrent-search__results:has(.torrent-search--grouped__results) table.data-table { display: block !important; height: 0 !important; border: none !important; overflow: visible !important; }
 .torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead { display: block !important; position: relative !important; height: 0 !important; }
 .torrent-search__results:has(.torrent-search--grouped__results) table.data-table thead tr { display: block !important; }
@@ -543,19 +522,10 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 #chatbox_header .form__select { border-color: rgba(245,166,35,0.22) !important; }
 #chatbox_header .form__select:hover { border-color: rgba(245,166,35,0.45) !important; }
 
-/* Room/Status selects wobble ~2px as the header reflows (chat
-   updates re-resolve their max-content width, and flex redistributes
-   the shift onto the neighbour). Pin both to fixed widths and take
-   them out of flex sizing so neither the box nor its text drifts.
-   Widths sized to the longest room/status label with headroom. */
 #chatbox_header .panel__action { flex: 0 0 auto !important; }
 #currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
-/* Base UNIT3D theme bumps select border 1px→2px and shrinks padding
-   on :hover/:focus (--select-*-hover/active). With the box pinned,
-   that border-box change reflows the centered text a subpixel each
-   way. Hold border-width and padding constant in every state so the
-   text can't move; only the gold border-COLOR still changes. */
+
 #currentChatroom.form__select, #currentChatroom.form__select:hover, #currentChatroom.form__select:focus, #currentChatroom.form__select:focus:hover,
 #currentChatstatus.form__select, #currentChatstatus.form__select:hover, #currentChatstatus.form__select:focus, #currentChatstatus.form__select:focus:hover {
   border-width: 1px !important;
@@ -748,10 +718,6 @@ ul.torrent__tags .torrent-icons {
   margin-left: 4px !important;
 }
 
-/* ==========================================================
-   CARRIED OVER from pre-fork olympus (not present at fork point)
-   ========================================================== */
-
 .trending-poster__download-count {
   background: var(--at-bg3) !important;
   color: var(--at-gold) !important;
@@ -764,11 +730,6 @@ ul.torrent__tags .torrent-icons {
   font-weight: inherit !important;
 }
 
-/* Donation page: cards are .donation-package__wrapper (flex children
-   capped at calc(25% - 30px)); tighter gaps + slimmer side padding
-   give the benefit text ~35px more room so lines stop wrapping.
-   (The old .donation__item max-width rule was removed — that class
-   doesn't exist on /donations and the cap was what made text narrow.) */
 .donation-packages {
   gap: 16px !important;
 }
@@ -795,25 +756,12 @@ details.torrent-search--grouped__dropdown > details.torrent-search--grouped__dro
   margin-top: 4px !important;
 }
 
-/* ==========================================================
-   FIXES — live-DOM verified on aither.cc (2026-06-12)
-   ========================================================== */
-
-/* ── Gifts page (/users/X/gifts) ──
-   UNIT3D core gives td.data-table__bon-taxed display:flex. A flex
-   td stops rendering as a table cell: it collapses to content
-   height, so the points value + its bottom border float mid-row.
-   Restoring table-cell fixes the layout. */
 td.data-table__bon-taxed {
   display: table-cell !important;
   vertical-align: middle !important;
 }
 td.data-table__bon-taxed i.fa-percent { margin-left: 4px !important; }
 
-/* ── Generic text inputs (stray unstyled inputs site-wide) ──
-   :not() exclusions keep the quick-search pill (base var
-   --quick-search-border-radius: 16px) and the borderless
-   post tip input intact. */
 .form__input:not(.quick-search__input),
 input[type="text"]:not(.quick-search__input):not(.post__tip-input),
 input[type="search"]:not(.quick-search__input),
@@ -825,7 +773,7 @@ input[type="password"] {
   color: var(--at-text) !important;
   font-size: 14px !important;
 }
-/* belt and suspenders: never let anything square the quick search */
+
 .quick-search__input, input.quick-search__input {
   border-radius: var(--quick-search-border-radius, 16px) !important;
 }
@@ -835,19 +783,10 @@ input[type="password"] {
 }
 .post__tip-input, .post__tip-input:focus { border: none !important; border-radius: 2px !important; }
 
-/* ── User dropdown: tighten the gap under the username ──
-   Base gives a.top-nav__username padding 12px 0. */
 li.top-nav__dropdown ul li a.top-nav__username {
   padding: 8px 0 2px !important;
 }
 
-/* ── Dropdown / icon-bar circle icons ──
-   Glyphs measure dead-center in CSS px (verified: all 32 nav
-   glyphs within ±0.5px of box center). The perceived offset comes
-   from OS display scaling: 30px circles = 37.5 device px at 125%,
-   so Chrome's rounding shifts the glyph a hair per element.
-   32px lands on whole device pixels at 125% AND 150%.
-   If you prefer the old size, change 32px back to 30px. */
 .top-nav--left__list-item ul li i.fas,
 .top-nav--left__list-item ul li i.far,
 .top-nav--left__list-item ul li i.fab,
@@ -871,9 +810,6 @@ li.top-nav__dropdown ul li i.fab {
   line-height: 1 !important;
 }
 
-/* ── Checkboxes: dark check on gold ──
-   accent-color leaves the glyph colour to the browser (iOS picks
-   white on gold). Custom-drawn box with a dark check. */
 input[type="checkbox"] {
   -webkit-appearance: none !important;
   appearance: none !important;
@@ -908,11 +844,6 @@ input[type="checkbox"]:disabled {
   cursor: default !important;
 }
 
-/* ── /stats page (scoped to page__stats--index only) ──
-   Structure is nested dl.key-value lists: .key-value__group--nested
-   holds a section caption (dt) + an inner dl of .key-value__group
-   rows. Stock theme painted every row page-black with its own 1px
-   border = harsh grid. Verified live. */
 .page__stats--index .key-value__group {
   background-color: var(--at-bg2) !important;
   border: none !important;
@@ -941,16 +872,8 @@ input[type="checkbox"]:disabled {
 .page__stats--index .key-value__group--nested > dd { margin: 0 !important; }
 .page__stats--index .key-value { gap: 0 !important; }
 
-/* ── Category icons: keep aither-dark's neutral gray ──
-   The :root --color-icons: #f5a623 gilds both i.torrent-icon and
-   i.category__icon (aither-dark default is #bababa). Torrent icons
-   stay gold; category/format icons go back to neutral. */
 i.category__icon { color: #bababa !important; }
 
-/* ── Chatbox header: de-emphasize SystemBot / Users / icon buttons
-   (Ether's attention-hierarchy feedback). The gold panel heading
-   stays the anchor; secondary controls sit muted and light up gold
-   on hover. ── */
 #chatbox_header .form__button--text,
 .panelV2.chatbox .panel__header .form__button--text {
   color: var(--at-text2) !important;
@@ -970,7 +893,6 @@ i.category__icon { color: #bababa !important; }
   opacity: 1 !important;
 }
 
-/* ── Misc small adds ── */
 .progress-bar, [class*="progress"] > [class*="bar"] { background-color: var(--at-gold) !important; }
 
 .page__event--index article,
@@ -990,7 +912,6 @@ i.category__icon { color: #bababa !important; }
   background-color: #151c2c !important;
 }
 
-/* ── Mobile ── */
 @media (max-width: 1100px) {
   .top-nav--left__dropdown,
   .top-nav--left__list-item ul,
