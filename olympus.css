@@ -533,14 +533,10 @@ a[style*="color:#95A5A6"],a[style*="color: #95A5A6"] { color: #95A5A6 !important
 .bbcode-rendered.bbcode-rendered blockquote { background-color: #121823 !important; border: 2px dotted #3e4455 !important; }
 
 :root { --bbcode-rendered-accent-fg: var(--at-gold); --bbcode-rendered-accent-emphasis: var(--at-gold2); }
-.bbcode-rendered a:not(.form__button):not([class*="button"]),
-.user-profile__column a:not(.form__button):not([class*="button"]):not(.user-tag__link):not([class*="nav-tab"]):not(.panel__heading):not(.meta__title-link),
-.data-table tfoot a:not(.form__button):not(.user-tag__link), .data-table caption a:not(.form__button):not(.user-tag__link),
-.key-value a:not(.form__button):not(.user-tag__link) { color: var(--at-gold) !important; text-decoration: none !important; transition: color .15s, text-shadow .15s !important; }
-.bbcode-rendered a:not(.form__button):not([class*="button"]):hover,
-.user-profile__column a:not(.form__button):not([class*="button"]):not(.user-tag__link):not([class*="nav-tab"]):not(.panel__heading):not(.meta__title-link):hover,
-.data-table tfoot a:not(.form__button):not(.user-tag__link):hover, .data-table caption a:not(.form__button):not(.user-tag__link):hover,
-.key-value a:not(.form__button):not(.user-tag__link):hover { color: #ffc658 !important; text-shadow: 0 0 8px rgba(245,166,35,0.7) !important; }
+:where(.panel__body, .bbcode-rendered, .key-value, fieldset, form, .alert, .dialog__form, .meta__description) a:not(.form__button):not([class*="button"]):not(.user-tag__link):not([class*="nav-tab"]):not(.panel__heading):not([class*="pagination"]):not([class*="top-nav"]):not([class*="secondary-nav"]):not([class*="breadcrumb"]):not([class*="meta__title"]):not([class*="torrent-search--list__"]):not([class*="footer"]):not([class*="chatbox"]):not([class*="meta__dropdown"]):not([href*="/torrents/download/"]),
+.data-table tfoot a:not(.form__button):not(.user-tag__link), .data-table caption a:not(.form__button):not(.user-tag__link) { color: var(--at-gold) !important; text-decoration: none !important; transition: color .15s, text-shadow .15s !important; }
+:where(.panel__body, .bbcode-rendered, .key-value, fieldset, form, .alert, .dialog__form, .meta__description) a:not(.form__button):not([class*="button"]):not(.user-tag__link):not([class*="nav-tab"]):not(.panel__heading):not([class*="pagination"]):not([class*="top-nav"]):not([class*="secondary-nav"]):not([class*="breadcrumb"]):not([class*="meta__title"]):not([class*="torrent-search--list__"]):not([class*="footer"]):not([class*="chatbox"]):not([class*="meta__dropdown"]):not([href*="/torrents/download/"]):hover,
+.data-table tfoot a:not(.form__button):not(.user-tag__link):hover, .data-table caption a:not(.form__button):not(.user-tag__link):hover { color: #ffc658 !important; text-shadow: 0 0 8px rgba(245,166,35,0.7) !important; }
 
 .top-nav__dropdown a.top-nav__username i.fas, .top-nav__dropdown a.top-nav__username i.far { background-color: transparent !important; border-color: transparent !important; }
 li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown ul li a.top-nav__username:hover i.fas { background-color: transparent !important; border-color: transparent !important; }
