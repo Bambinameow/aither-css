@@ -551,6 +551,16 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 #chatbox_header .panel__action { flex: 0 0 auto !important; }
 #currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
+/* Base UNIT3D theme bumps select border 1px→2px and shrinks padding
+   on :hover/:focus (--select-*-hover/active). With the box pinned,
+   that border-box change reflows the centered text a subpixel each
+   way. Hold border-width and padding constant in every state so the
+   text can't move; only the gold border-COLOR still changes. */
+#currentChatroom.form__select, #currentChatroom.form__select:hover, #currentChatroom.form__select:focus, #currentChatroom.form__select:focus:hover,
+#currentChatstatus.form__select, #currentChatstatus.form__select:hover, #currentChatstatus.form__select:focus, #currentChatstatus.form__select:focus:hover {
+  border-width: 1px !important;
+  padding: 11px 23px 11px 11px !important;
+}
 #chatbox_header .form__label--floating { color: var(--at-gold) !important; }
 
 .dialog__heading { background-color: var(--at-bg3) !important; color: var(--at-gold) !important; border-bottom: 1px solid var(--at-goldfaint) !important; font-weight: 600 !important; letter-spacing: .04em !important; }
