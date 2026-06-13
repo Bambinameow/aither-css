@@ -315,7 +315,7 @@ textarea:focus, textarea.form__textarea:focus, .form__textarea:focus { border-co
 
 .form__button--text { background: transparent !important; border: none !important; box-shadow: none !important; color: var(--at-gold) !important; }
 .bbcode-input__icon-bar .form__button--text { color: #a2701e !important; }
-.form__button--text:hover { color: var(--at-gold2) !important; }
+.form__button--text:hover { color: #ffc658 !important; text-shadow: 0 0 8px rgba(245,166,35,0.7) !important; transition: color .15s, text-shadow .15s !important; }
 a.form__button--text[href*="/dashboard/reports"], a.form__button--text[href*="/contributors/internal-claim"], a.form__button--text[href*="/contributors/contest"] { color: var(--at-text) !important; }
 a.form__button--text[href*="/dashboard/reports"]:hover, a.form__button--text[href*="/contributors/internal-claim"]:hover, a.form__button--text[href*="/contributors/contest"]:hover { color: var(--at-gold) !important; }
 .page__staff-dashboard--index .form__button--text { color: var(--at-text) !important; }
@@ -914,6 +914,7 @@ i.category__icon { color: #bababa !important; }
 #chatbox_header .form__button--text:hover,
 .panelV2.chatbox .panel__header .form__button--text:hover {
   color: var(--at-gold) !important;
+  text-shadow: none !important;
 }
 #chatbox_header .form__standard-icon-button,
 .panelV2.chatbox .panel__header .form__standard-icon-button {
