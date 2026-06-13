@@ -563,8 +563,6 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 dialog.dialog--auto-width tr:hover td { background-color: #222e48 !important; }
 
 .group-requirements__group--requirement-row, .group-requirements__group--requirement-multirow { background-color: var(--at-bg3) !important; }
-.group-requirements__group-wrapper:hover { background-color: rgba(245,166,35,0.08) !important; }
-.group-requirements__group--requirement-row:hover { background-color: rgba(245,166,35,0.12) !important; }
 
 article.achievement { background-color: var(--at-bg3) !important; border: 0.5px solid var(--at-border) !important; border-radius: var(--at-radius) !important; }
 article.achievement progress.achievement__progress { accent-color: var(--at-gold) !important; }
@@ -999,3 +997,9 @@ i.category__icon { color: #bababa !important; }
 .group-requirements__group-wrapper { border: 1px solid var(--at-goldfaint) !important; border-radius: var(--at-radius) !important; }
 .group-requirements__group--header i.fa-plus-circle, .group-requirements__group--header i.fa-minus-circle, i.fa-plus-circle.fa-pull-right, i.fa-minus-circle.fa-pull-right { color: var(--at-gold) !important; }
 .group-requirements__perk, .group-requirements__perk-extended { background-color: rgba(255,255,255,0.04) !important; border: 1px solid rgba(245,166,35,0.15) !important; border-radius: var(--at-radius-sm, 6px) !important; }
+
+.group-requirements__group-wrapper:hover { background-color: var(--at-bg3) !important; border-color: rgba(245,166,35,0.18) !important; }
+.group-requirements__group--requirement-row:hover { background-color: inherit !important; }
+.group-requirements__perk:hover, .group-requirements__perk-extended:hover { background-color: rgba(255,255,255,0.04) !important; border-color: rgba(245,166,35,0.15) !important; }
+
+.breadcrumbsV2 .breadcrumb--active::before { padding-right: 0.5ch !important; }
