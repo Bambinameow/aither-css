@@ -542,6 +542,15 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 .top-nav__dropdown a.top-nav__username, li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username:hover { background-color: transparent !important; }
 #chatbox_header .form__select { border-color: rgba(245,166,35,0.22) !important; }
 #chatbox_header .form__select:hover { border-color: rgba(245,166,35,0.45) !important; }
+
+/* Room/Status selects wobble ~2px as the header reflows (chat
+   updates re-resolve their max-content width, and flex redistributes
+   the shift onto the neighbour). Pin both to fixed widths and take
+   them out of flex sizing so neither the box nor its text drifts.
+   Widths sized to the longest room/status label with headroom. */
+#chatbox_header .panel__action { flex: 0 0 auto !important; }
+#currentChatroom.form__select { width: 132px !important; min-width: 132px !important; max-width: 132px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
+#currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 #chatbox_header .form__label--floating { color: var(--at-gold) !important; }
 
 .dialog__heading { background-color: var(--at-bg3) !important; color: var(--at-gold) !important; border-bottom: 1px solid var(--at-goldfaint) !important; font-weight: 600 !important; letter-spacing: .04em !important; }
