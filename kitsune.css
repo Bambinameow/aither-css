@@ -40,6 +40,10 @@
   --paginate-fg:                  #888888;
   --data-table-tr-hover-bg:       rgba(244,170,202,0.07);
   --color-links:                  #e8e8e8;
+  --breadcrumb-fg:                #888888;
+  --breadcrumb-active-fg:         #e8e8e8;
+  --breadcrumb-hover-fg:          #F4AACA;
+  --notification-unread:          #F4AACA;
   --panel-head-fg:                #F4AACA;
   --post-toolbar-bg:              #111111;
   --post-toolbar-hover-bg:        #181818;
