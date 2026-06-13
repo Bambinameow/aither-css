@@ -594,6 +594,8 @@ a[style*="color:#95A5A6"],a[style*="color: #95A5A6"] { color: #95A5A6 !important
 .compact-search, .compact-search__visible-default { padding: 6px 8px !important; }
 .similar-torrents__filters { display: none !important; }
 .collection-posters { overflow-x: hidden !important; }
+section.also-downloaded { scrollbar-width: none !important; -ms-overflow-style: none !important; }
+section.also-downloaded::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
 .compact-search .form__group { margin: 0 !important; }
 .compact-search input.form__text, .compact-search .form__text { padding: 8px 12px !important; font-size: 13px !important; }
 
