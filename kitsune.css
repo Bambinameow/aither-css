@@ -108,7 +108,7 @@ html:has(main[class*="ticket"])   .top-nav--left__list-item:has(a[href*="/ticket
 .top-nav--right__icon-link i.fas, .top-nav--right__icon-link i.far, .top-nav--right__link i.fas { background-color: var(--k-bg3) !important; border: 1px solid var(--k-pink-border) !important; }
 .top-nav--right__icon-link:hover i.fas, .top-nav--right__icon-link:hover i.far, .top-nav--right__link:hover i.fas { background-color: var(--k-pink-faint) !important; border-color: var(--k-pink) !important; color: var(--k-pink) !important; }
 
-.top-nav__dropdown a.top-nav__username i.fas, .top-nav__dropdown a.top-nav__username i.far { background-color: var(--k-bg3) !important; border-color: transparent !important; }
+.top-nav__dropdown a.top-nav__username i.fas, .top-nav__dropdown a.top-nav__username i.far { background-color: transparent !important; border-color: transparent !important; }
 
 .top-nav--left__list-item ul, li.top-nav__dropdown > ul { background-color: var(--k-bg2) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius) !important; box-shadow: 0 8px 32px rgba(20,20,20,0.8) !important; }
 
@@ -319,7 +319,7 @@ input:focus, textarea:focus, select:focus, .form__input:focus, [type="search"]:f
 .form__select, .form__select:hover, .form__select:focus, .form__select:focus:hover { border-width: 0.5px !important; padding: 11px 23px 11px 11px !important; }
 
 html body .panel__header .form__button, html body .panel__header .form__button--text { background: transparent !important; border: none !important; color: var(--k-pink) !important; font-size: inherit !important; }
-html body .panel__header .form__select, html body .panel__header select { background-color: rgba(244,170,202,0.04) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-pink) !important; }
+html body .panel__header .form__select, html body .panel__header select { background-color: rgba(244,170,202,0.04) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius-sm) !important; color: var(--k-text) !important; }
 
 .bbcode-input__tab-pane { background-color: var(--k-bg2) !important; }
 .bbcode-input { border-color: var(--k-border) !important; }
@@ -479,7 +479,7 @@ input[type="file"]::file-selector-button { background-color: var(--k-bg3) !impor
 input[type="file"]::file-selector-button:hover { background-color: var(--k-pink-faint) !important; border-color: var(--k-pink) !important; }
 
 .top-nav__dropdown a.top-nav__username, li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username, li.top-nav__dropdown ul li a.top-nav__username:hover { background-color: transparent !important; }
-li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown ul li a.top-nav__username:hover i.fas { background-color: var(--k-bg3) !important; border-color: transparent !important; }
+li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown ul li a.top-nav__username:hover i.fas { background-color: transparent !important; border-color: transparent !important; }
 li.top-nav__dropdown ul li a.top-nav__username { padding: 8px 0 2px !important; }
 
 @keyframes k-dot-pulse {
