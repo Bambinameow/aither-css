@@ -475,8 +475,6 @@ tr.moderation__details-table--bottom td, tr.moderation__details-table--bottom:nt
 dialog.dialog--auto-width tr:hover td { background-color: var(--k-bg4) !important; }
 
 .group-requirements__group--requirement-row, .group-requirements__group--requirement-multirow { background-color: var(--k-bg3) !important; }
-.group-requirements__group-wrapper:hover { background-color: rgba(244,170,202,0.08) !important; }
-.group-requirements__group--requirement-row:hover { background-color: rgba(244,170,202,0.12) !important; }
 
 article.achievement { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-border) !important; border-radius: var(--k-radius) !important; }
 article.achievement progress.achievement__progress { accent-color: var(--k-pink) !important; }
@@ -751,3 +749,9 @@ table.torrent-search--grouped__torrents tr:hover td { background-color: rgba(244
 .group-requirements__group-wrapper { border: 1px solid var(--k-pink-border) !important; border-radius: var(--k-radius) !important; }
 .group-requirements__group--header i.fa-plus-circle, .group-requirements__group--header i.fa-minus-circle, i.fa-plus-circle.fa-pull-right, i.fa-minus-circle.fa-pull-right { color: var(--k-pink) !important; }
 .group-requirements__perk, .group-requirements__perk-extended { background-color: rgba(244,170,202,0.05) !important; border: 1px solid var(--k-pink-border) !important; border-radius: var(--k-radius-sm) !important; }
+
+.group-requirements__group-wrapper:hover { background-color: var(--k-bg3) !important; border-color: rgba(244,170,202,0.18) !important; }
+.group-requirements__group--requirement-row:hover { background-color: inherit !important; }
+.group-requirements__perk:hover, .group-requirements__perk-extended:hover { background-color: rgba(244,170,202,0.05) !important; border-color: rgba(244,170,202,0.15) !important; }
+
+.breadcrumbsV2 .breadcrumb--active::before { padding-right: 0.5ch !important; }
