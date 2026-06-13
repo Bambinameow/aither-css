@@ -300,15 +300,12 @@ li.pagination__previous--disabled, li.pagination__next--disabled { background-co
 
 fieldset, .form__fieldset { border-color: rgba(255,255,255,0.12) !important; }
 fieldset.form, .form.form__fieldset, fieldset.form__fieldset { background-color: var(--at-bg3) !important; border-color: rgba(255,255,255,0.10) !important; }
-/* Floating labels: transparent at rest (no box inside the field);
-   the dark patch only appears in the FLOATED state (focused, filled,
-   or select), where the label sits on the field's border line. */
+/* Floating labels: NO background in any state, anywhere — same
+   bare treatment as the chatbox. Floated labels sit directly on
+   the field's border line (known, accepted tradeoff). */
 .form__label--floating { background-color: transparent !important; color: var(--at-text2) !important; border-radius: 2px !important; }
 fieldset .form__label--floating, [class*="compact-search"] .form__label--floating, [class*="torrent-search"] .form__label--floating { background-color: transparent !important; }
-.form__group:has(select) .form__label--floating, .form__group:has(input:not(:placeholder-shown)) .form__label--floating, .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating { padding: 0 4px !important; background-color: var(--at-bg2) !important; }
-fieldset .form__group:has(select) .form__label--floating, fieldset .form__group:has(input:not(:placeholder-shown)) .form__label--floating, fieldset .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating,
-[class*="compact-search"] .form__group:has(select) .form__label--floating, [class*="compact-search"] .form__group:has(input:not(:placeholder-shown)) .form__label--floating,
-[class*="torrent-search"] .form__group:has(input:not(:placeholder-shown)) .form__label--floating { background-color: var(--at-bg3) !important; }
+.form__group:has(select) .form__label--floating, .form__group:has(input:not(:placeholder-shown)) .form__label--floating, .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating { background-color: transparent !important; }
 textarea, textarea.form__textarea, .form__textarea { background-color: var(--at-bg2) !important; border: 1px solid rgba(255,255,255,0.10) !important; color: var(--at-text) !important; border-radius: var(--at-radius) !important; }
 textarea:focus, textarea.form__textarea:focus, .form__textarea:focus { border-color: rgba(245,166,35,0.6) !important; box-shadow: 0 0 0 3px rgba(245,166,35,0.10) !important; outline: none !important; }
 
@@ -539,8 +536,6 @@ input[type="file"]::file-selector-button:hover { background-color: var(--at-gold
 .page__torrent--create .form__group--short-horizontal { align-items: start !important; }
 .page__torrent--create .form__group--horizontal .form__select { background-color: var(--at-bg3) !important; border: 1px solid var(--at-border) !important; border-radius: 6px !important; color: var(--at-text) !important; }
 .page__torrent--create .form__group--horizontal .form__select:focus { border-color: rgba(245,166,35,0.4) !important; box-shadow: 0 0 0 2px rgba(245,166,35,0.08) !important; }
-.page__torrent--create fieldset .form__group:has(select) .form__label--floating,
-.page__torrent--create fieldset .form__group:has(input:not(:placeholder-shown)) .form__label--floating { background-color: var(--at-bg3) !important; }
 .page__torrent--create .panel__sub-heading { border-radius: 6px !important; margin-top: 16px !important; border: none !important; }
 label.form__label.form__label--floating { background-color: transparent !important; }
 
@@ -822,20 +817,6 @@ li.top-nav__dropdown ul li i.fab {
   line-height: 1 !important;
 }
 
-/* ── Floating label crosses the border when a field is FOCUSED
-   but still empty (the :has(:not(:placeholder-shown)) rules only
-   cover filled fields) ── */
-.form__group:focus-within .form__label--floating {
-  background-color: var(--at-bg2) !important;
-  padding: 0 4px !important;
-}
-fieldset .form__group:focus-within .form__label--floating,
-[class*="compact-search"] .form__group:focus-within .form__label--floating,
-[class*="torrent-search"] .form__group:focus-within .form__label--floating,
-.page__torrent--create fieldset .form__group:focus-within .form__label--floating {
-  background-color: var(--at-bg3) !important;
-}
-
 /* ── Checkboxes: dark check on gold ──
    accent-color leaves the glyph colour to the browser (iOS picks
    white on gold). Custom-drawn box with a dark check. */
@@ -873,18 +854,38 @@ input[type="checkbox"]:disabled {
   cursor: default !important;
 }
 
-/* ── /stats page: normalize to two surfaces ── */
-main[class*="stat"] .panel__body { background-color: var(--at-bg2) !important; }
-main[class*="stat"] table td,
-main[class*="stat"] .key-value__group dd { background-color: var(--at-bg2) !important; }
-main[class*="stat"] tr:nth-child(even) td { background-color: var(--at-bg3) !important; }
-main[class*="stat"] th,
-main[class*="stat"] thead td,
-main[class*="stat"] .key-value__group dt {
-  background-color: var(--at-bg3) !important;
-  color: var(--at-text2) !important;
+/* ── /stats page (scoped to page__stats--index only) ──
+   Structure is nested dl.key-value lists: .key-value__group--nested
+   holds a section caption (dt) + an inner dl of .key-value__group
+   rows. Stock theme painted every row page-black with its own 1px
+   border = harsh grid. Verified live. */
+.page__stats--index .key-value__group {
+  background-color: var(--at-bg2) !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+  border-radius: 0 !important;
+  padding: 7px 12px !important;
 }
-main[class*="stat"] tr:hover td { background-color: #101524 !important; }
+.page__stats--index .key-value__group:nth-child(even) { background-color: #151c2e !important; }
+.page__stats--index .key-value__group:last-child { border-bottom: none !important; }
+.page__stats--index .key-value__group dt { color: var(--at-text2) !important; }
+.page__stats--index .key-value__group dd { color: var(--at-text) !important; }
+.page__stats--index .key-value__group--nested {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.page__stats--index .key-value__group--nested > dt {
+  color: var(--at-gold) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .08em !important;
+  padding: 10px 12px 6px !important;
+  background: transparent !important;
+}
+.page__stats--index .key-value__group--nested > dd { margin: 0 !important; }
+.page__stats--index .key-value { gap: 0 !important; }
 
 /* ── Category icons: keep aither-dark's neutral gray ──
    The :root --color-icons: #f5a623 gilds both i.torrent-icon and
@@ -913,18 +914,6 @@ i.category__icon { color: #bababa !important; }
 .panelV2.chatbox .panel__header .form__standard-icon-button:hover {
   color: var(--at-gold) !important;
   opacity: 1 !important;
-}
-
-/* ── Chatbox: never give its floating labels a background ──
-   ("Write your message…" and the Room/Status labels stay bare in
-   every state; the patch elsewhere is only for bordered fields) */
-.panelV2.chatbox .form__group:focus-within .form__label--floating,
-.panelV2.chatbox .form__group:has(textarea:not(:placeholder-shown)) .form__label--floating,
-.panelV2.chatbox .form__group:has(input:not(:placeholder-shown)) .form__label--floating,
-.panelV2.chatbox .form__group:has(select) .form__label--floating,
-#chatbox_header .form__group:has(select) .form__label--floating,
-#chatbox_header .form__group:focus-within .form__label--floating {
-  background-color: transparent !important;
 }
 
 /* ── Misc small adds ── */
