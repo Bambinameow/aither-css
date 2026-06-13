@@ -293,7 +293,7 @@ li.pagination__page-wrapper { background-color: transparent !important; }
 ul.pagination__pages li { background-color: var(--k-bg2) !important; border-color: var(--k-border) !important; }
 ul.pagination__pages li:hover { background-color: var(--k-bg3) !important; }
 .form__button--text { background: transparent !important; border: none !important; color: var(--k-pink) !important; font-size: inherit !important; }
-.form__button--text:hover { color: var(--k-pink-soft) !important; }
+.form__button--text:hover { color: #ffd6e6 !important; text-shadow: 0 0 8px rgba(244,170,202,0.7) !important; transition: color .15s, text-shadow .15s !important; }
 .form__button--filled, .form__button--filled.btn { background: var(--k-pink) !important; color: #000 !important; border-radius: 9999px !important; border: none !important; font-weight: 600 !important; }
 .form__button--filled:hover { background: var(--k-pink-soft) !important; color: #000 !important; }
 .form__button--outlined { background-color: transparent !important; color: var(--k-text) !important; border: 1px solid var(--k-text3) !important; }
@@ -418,7 +418,7 @@ h1.text-gold, h2.text-gold, h3.text-gold, h4.text-gold, .text-gold { color: var(
 #currentChatstatus.form__select { width: 188px !important; min-width: 188px !important; max-width: 188px !important; flex: 0 0 auto !important; box-sizing: border-box !important; }
 
 #chatbox_header .form__button--text, .panelV2.chatbox .panel__header .form__button--text { color: var(--k-text2) !important; }
-#chatbox_header .form__button--text:hover, .panelV2.chatbox .panel__header .form__button--text:hover { color: var(--k-pink) !important; }
+#chatbox_header .form__button--text:hover, .panelV2.chatbox .panel__header .form__button--text:hover { color: var(--k-pink) !important; text-shadow: none !important; }
 #chatbox_header .form__standard-icon-button, .panelV2.chatbox .panel__header .form__standard-icon-button { color: var(--k-text2) !important; opacity: 0.7 !important; }
 #chatbox_header .form__standard-icon-button:hover, .panelV2.chatbox .panel__header .form__standard-icon-button:hover { color: var(--k-pink) !important; opacity: 1 !important; }
 
