@@ -749,9 +749,11 @@ table.torrent-search--grouped__torrents tr:hover td { background-color: rgba(244
 .group-requirements__group-wrapper { border: 1px solid var(--k-pink-border) !important; border-radius: var(--k-radius) !important; }
 .group-requirements__group--header i.fa-plus-circle, .group-requirements__group--header i.fa-minus-circle, i.fa-plus-circle.fa-pull-right, i.fa-minus-circle.fa-pull-right { color: var(--k-pink) !important; }
 .group-requirements__perk, .group-requirements__perk-extended { background-color: rgba(244,170,202,0.05) !important; border: 1px solid var(--k-pink-border) !important; border-radius: var(--k-radius-sm) !important; }
+.group-requirements__group--requirement-row > div:first-child > i.fas:not(.text-green):not(.text-red):not(.fa-check):not(.fa-times):not(.fa-plus-circle):not(.fa-minus-circle) { color: var(--k-text2) !important; }
 
-.group-requirements__group-wrapper:hover { background-color: var(--k-bg3) !important; border-color: rgba(244,170,202,0.18) !important; }
-.group-requirements__group--requirement-row:hover { background-color: inherit !important; }
+.group-requirements__group-wrapper:hover { background-color: var(--key-value-even-bg) !important; border-color: var(--k-pink-border) !important; }
+.group-requirements__group--requirement-row, .group-requirements__group--requirement-row:hover { background-color: transparent !important; }
+.group-requirements__group-wrapper table td, .group-requirements__group-wrapper table th { background-color: transparent !important; border-color: var(--k-border) !important; }
 .group-requirements__perk:hover, .group-requirements__perk-extended:hover { background-color: rgba(244,170,202,0.05) !important; border-color: rgba(244,170,202,0.15) !important; }
 
 .breadcrumbsV2 .breadcrumb--active::before { padding-right: 0.5ch !important; }
