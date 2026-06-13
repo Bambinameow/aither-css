@@ -101,6 +101,9 @@ html:has(main[class*="ticket"])   .top-nav--left__list-item:has(a[href*="/ticket
 .top-nav--left__list-item ul, .top-nav__dropdown ul, .top-nav--left__dropdown { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.7) !important; }
 .top-nav--left__list-item ul li a, .top-nav__dropdown ul li a, li.top-nav__dropdown ul li a { color: var(--k-text) !important; transition: color .15s, background .15s !important; }
 .top-nav--left__list-item ul li a:hover, .top-nav__dropdown ul li a:hover, li.top-nav__dropdown ul li a:hover { background-color: var(--k-pink-faint) !important; color: var(--k-pink) !important; }
+li.top-nav__dropdown ul li button.top-nav--right__link { color: var(--k-text) !important; transition: color .15s, background .15s !important; }
+li.top-nav__dropdown ul li button.top-nav--right__link:hover { background-color: var(--k-pink-faint) !important; color: var(--k-pink) !important; }
+li.top-nav__dropdown ul li button.top-nav--right__link:hover i { color: var(--k-pink) !important; }
 
 .top-nav--left__list-item ul li i.fas, .top-nav--left__list-item ul li i.far, .top-nav--left__list-item ul li i.fab, li.top-nav__dropdown ul li i.fas, li.top-nav__dropdown ul li i.far, li.top-nav__dropdown ul li i.fab { background-color: var(--k-bg4) !important; border: 1px solid var(--k-border) !important; color: var(--k-text2) !important; }
 .top-nav--left__list-item ul li a:hover i.fas, li.top-nav__dropdown ul li a:hover i.fas { background-color: var(--k-pink-faint) !important; border-color: var(--k-pink-border) !important; color: var(--k-pink) !important; }
