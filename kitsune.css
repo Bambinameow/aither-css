@@ -96,7 +96,10 @@ html:has(main[class*="playlist"]) .top-nav--left__list-item:has(a[href*="/forums
 html:has(main[class*="event"])      .top-nav--left__list-item:has(a[href*="/forums"]) > a,
 html:has(main[class*="collectible"]).top-nav--left__list-item:has(a[href*="/forums"]) > a,
 html:has(main[class*="wiki"])     .top-nav--left__list-item:has(a[href*="/wiki"]) > a,
-html:has(main[class*="ticket"])   .top-nav--left__list-item:has(a[href*="/ticket"]) > a { color: var(--k-pink) !important; border-bottom: 2px solid var(--k-pink) !important; padding-bottom: 2px !important; }
+html:has(main[class*="ticket"])   .top-nav--left__list-item:has(a[href*="/ticket"]) > a { color: var(--k-pink) !important; border: none !important; border-bottom: 2px solid var(--k-pink) !important; border-radius: 0 !important; outline: none !important; box-shadow: none !important; padding-bottom: 2px !important; }
+
+.top-nav__dropdown--nontouch { border-radius: 0px !important; }
+.top-nav__dropdown--touch { border-radius: 0 !important; }
 
 .top-nav--left__list-item ul, .top-nav__dropdown ul, .top-nav--left__dropdown { background-color: var(--k-bg3) !important; border: 0.5px solid var(--k-pink-border) !important; border-radius: var(--k-radius) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.7) !important; }
 .top-nav--left__list-item ul li a, .top-nav__dropdown ul li a, li.top-nav__dropdown ul li a { color: var(--k-text) !important; transition: color .15s, background .15s !important; }
