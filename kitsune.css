@@ -639,6 +639,7 @@ ul.torrent__tags .torrent-icons { margin-left: 4px !important; }
 h2.meta__heading { margin-top: 0 !important; margin-bottom: 6px !important; }
 .trending-poster__download-count { background: var(--k-bg3) !important; border: 2px solid var(--k-pink) !important; color: var(--k-pink) !important; }
 .form__button--text abbr { filter: brightness(.65) !important; color: var(--k-text2) !important; text-decoration: none !important; font-weight: inherit !important; }
+.bbcode-input__icon-bar .form__button--text abbr { color: var(--k-pink) !important; filter: none !important; font-weight: 600 !important; }
 details.torrent-search--grouped__dropdown > details.torrent-search--grouped__dropdown + details.torrent-search--grouped__dropdown { border-top: 2px solid rgba(244,170,202,0.25) !important; margin-top: 4px !important; }
 
 .top-nav--left__list-item > a:hover, .top-nav--left__list-item:hover > a, li.top-nav__dropdown > a:hover, li.top-nav__dropdown:hover > a { color: var(--k-pink) !important; background-color: transparent !important; }
