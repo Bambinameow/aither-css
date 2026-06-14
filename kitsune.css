@@ -143,6 +143,10 @@ article.quick-search__result { border-bottom: 1px solid rgba(255,255,255,0.03) !
 article.quick-search__result:last-child { border-bottom: none !important; }
 article.quick-search__result:hover { background-color: var(--k-pink-faint) !important; }
 .quick-search__results { background-color: #020202 !important; border: 1px solid var(--k-pink) !important; border-top: none !important; border-radius: 0 0 var(--k-radius) var(--k-radius) !important; overflow-y: auto !important; overflow-x: hidden !important; }
+.quick-search__image { border: solid 1px var(--k-border) !important; box-sizing: border-box !important; width: 46px !important; height: 69px !important; border-radius: var(--k-radius-sm) !important; object-fit: cover !important; }
+.quick-search__result-name { font-weight: 600 !important; font-size: 14px !important; }
+.quick-search__result-type { font-weight: 350 !important; color: var(--k-text2) !important; }
+.quick-search__result-year { color: var(--k-text2) !important; }
 
 search.compact-search, .compact-search, .compact-search__visible-default, .torrent-search__filters, [class*="compact-search"] { background-color: var(--k-bg2) !important; border-color: var(--k-border) !important; }
 [class*="compact-search"] p.form__group, [class*="compact-search"] .form__group, [class*="torrent-search"] .form__group { background-color: transparent !important; }
