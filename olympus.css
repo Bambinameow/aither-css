@@ -562,7 +562,9 @@ li.top-nav__dropdown ul li:hover a.top-nav__username i.fas, li.top-nav__dropdown
 .dialog__actions, .dialog__action { background-color: var(--at-bg3) !important; }
 dialog.dialog--auto-width tr:hover td { background-color: #222e48 !important; }
 
-.group-requirements__group--requirement-row, .group-requirements__group--requirement-multirow { background-color: var(--at-bg3) !important; }
+.group-requirements__group--requirement-row, .group-requirements__group--requirement-multirow { background-color: var(--at-bg2) !important; }
+.group-requirements__group-wrapper:hover { background-color: rgba(245,166,35,0.03) !important; }
+.group-requirements__group--requirement-row:hover { background-color: rgba(245,166,35,0.06) !important; }
 
 article.achievement { background-color: var(--at-bg3) !important; border: 0.5px solid var(--at-border) !important; border-radius: var(--at-radius) !important; }
 article.achievement progress.achievement__progress { accent-color: var(--at-gold) !important; }
